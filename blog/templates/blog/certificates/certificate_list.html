@@ -1,8 +1,23 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
-{% block title %}Certificate Page{% endblock title %}
+
+{% block script %}
+<link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/project.css' %}">
+{% endblock script %}
+    
+{% block title %}Certificates{% endblock title %}
 
 {% block main %}
-<h1 class="text-center">Certificates</h1>
+<section class="projects container-fluid">
+    <h1 class="text-center pt-4 mb-4">Certificates</h1>
+    <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
+        <!-- TODO  -->
+        <!-- create a new display simialr to about display -->
 
+        {% include "blog/home_components/certificate_components/certificate_card.html" with certificates=certificates %}
+    </article>
+    </section>
+        
 {% endblock main %}

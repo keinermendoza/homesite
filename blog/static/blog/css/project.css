@@ -1,0 +1,6 @@
+.projects {
+    background-color: gold;
+}
+.child-max-400px > * {
+    max-width: 400px;
+}

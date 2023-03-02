@@ -3,7 +3,9 @@
 {% for project in projects  %}
 <a class="move-to-right-on-scroll show-on-scroll card project-card nav-link" href='#projects-slash-{{project.name}}-type-slug'>
     <figure class="product-img">
-        <img  src="{{project.image}}" alt="{{project.name}}">
+        <!-- <img  src="{{project.image}}" alt="{{project.name}}"> -->
+        <img  src="{% static 'blog/images/ecommerce.jpg' %}" alt="{{project.name}}">
+
     </figure>
 
     <div class="card-body d-flex flex-column justify-content-between">

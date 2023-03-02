@@ -51,14 +51,7 @@ section:not(:first-child) {
     object-position: center left;
 }
 /* developer */
-.badge {
-    font-size: 0.8em;
-}
-.small-icon {
-    width: 12px;
-    position: relative;
-    top:-1px;
-}
+
 
 /* CERTIFICATES */
 .icon-verified {

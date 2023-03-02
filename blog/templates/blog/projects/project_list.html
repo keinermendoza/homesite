@@ -1,7 +1,20 @@
 {% extends "blog/base.html" %}
+{% load static %}
 
+
+{% block script %}
+<link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/project.css' %}">
+{% endblock script %}
+    
 {% block title %}Project Page{% endblock title %}
 
 {% block main %}
-    <h1 class="text-center">Projects</h1>
+<section class="projects container-fluid">
+    <h1 class="text-center pt-4 mb-4">Projects</h1>
+    <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
+        {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
+    </article>
+    </section>
+        
 {% endblock main %}
