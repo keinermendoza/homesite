@@ -3,6 +3,7 @@
 
 
 {% block script %}
+    <link rel="stylesheet" href="{% static 'blog/css/homepage.css' %}">
 {% endblock script %}
 
 {% block title %}
@@ -11,9 +12,40 @@
  
 
 {% block main %}
-    hero
-    projects
-    courses
-    faq
-    blog_last    
+    
+    {% comment %} hero {% endcomment %}
+    <section id="hero" class="d-flex flex-wrap-reverse justify-content-between gap-md-1">
+            {% comment %} VOY AQUI {% endcomment %}
+            <article class="col-12 col-md-6 d-flex flex-column justify-content-around">
+                <h1>I'm Keiner Mendoza</h1>
+                <h2>Web Developer</h2>
+                <h4>I make software solutions using web tecnologies as HTML, CSS, JavaScript, Django and React</h4>
+                <h4>I believe in continuous learning, since May 2022 I have been developing my programming skills and I plan to continue improving in this field.</h4>
+            </article>
+
+        <figure class="col-12 col-md-5">
+            <img src="{% static 'blog/images/profile.jpg' %}" alt="profile picture of the programmer keiner mendoza" />
+        </figure>
+    </section>
+    
+    {% comment %} projects {% endcomment %}
+    <section id="projects">
+        
+    </section>
+    
+    {% comment %} courses {% endcomment %}
+    <section id="courses">
+        
+    </section>
+    
+    {% comment %} faq {% endcomment %}
+    <section id="faq">
+        
+    </section>
+    
+    {% comment %} blog_last     {% endcomment %}
+    <section id="blog_last">
+        
+    </section>
+
 {% endblock main %}

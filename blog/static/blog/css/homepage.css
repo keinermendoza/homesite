@@ -1,0 +1,11 @@
+
+.from-450-to-280 {
+    width: clamp(280px, 50%, 450px);
+}
+.max-600 {
+    width: min(100%, 600px);
+}
+
+.profile {
+    border-radius: 50%;
+}

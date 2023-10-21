@@ -7,12 +7,34 @@
 :root {
     --dark--blue: rgb(1,5,19); 
 }
+@font-face {
+    font-family: 'TiltNeon';
+    src: local('TiltNeon'),
+         url('../fonts/TiltNeon-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'YoungSerif';
+    src: local('YoungSerif'),
+         url('../fonts/YoungSerif-Regular.ttf') format("truetype");
+}
+
 body {
     background-color: gray;
+    font-family: 'TiltNeon';
 }
+h1, h2 {
+    font-family: 'YoungSerif';
+}
+
 main {
     min-height: 100vh;
     margin-top: 80px;
+}
+img {
+    width: 100%;
+}
+.row {
+    margin-bottom: 0 !important;
 }
 /* navbar */
 .nav-item {
@@ -52,4 +74,10 @@ main {
 }
 .bg-darkblue {
     background-color: var(--dark--blue);
+}
+
+/* for develope */
+
+main {
+    background-color: purple;
 }
