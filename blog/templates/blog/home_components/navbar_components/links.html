@@ -1,0 +1,12 @@
+{% for link in links %}
+    <li class="nav-item px-3 py-1
+        {% if link.active %}active{% endif %}
+        {% if mobile %}
+            mobile-item
+        {% else %}
+            rounded-pill
+        {% endif %}">
+        
+        <a class="nav-link" href={{link.url}}>{{link.label}}</a>
+    </li>
+{% endfor %}

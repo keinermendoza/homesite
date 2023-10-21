@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" description="keiner mendoza" >
+    <meta name="description" description="Keiner Mendoza is a web developer that makes use of different technologies for the web creation, since raw HTML CSS and JavaScript to the use of developer frameworks like Django and React." >
+    <meta
+    property="og:image"
+    content="{% static 'blog/images/profile.jpg' %} %}" />
+
+    <meta property="og:title" content="Blog de Keiner Mendoza" />
+    <meta name="twitter:title" content="Blog de Keiner Mendoza" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'blog/icons/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'blog/icons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'blog/icons/favicon-16x16.png' %}">
+    <link rel="icon" href="{% static 'blog/icons/favicon.ico' %}" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="{% static 'blog/css/bootstrap.min.css'  %}">
+    <link rel="stylesheet" href="{% static 'blog/css/general.css'  %}">
+    <script src="{% static 'blog/js/navbar.js' %}" ></script>
+
+
+    {% block script %}{% endblock script %}
+
+    <title>
+        {% block title %}{% endblock title %}
+    </title>
+</head>
+
+<body>
+    {% include "blog/home_components/navbar.html" %}    
+    <main>
+        {% block main %}{% endblock main %}
+    </main>
+    {% include "blog/home_components/footer.html" %}
+</body>
+</html>
