@@ -41,7 +41,9 @@
     {% comment %} courses {% endcomment %}
     <section id="certificates">
         <h2 class="text-center mb-4">Certificates</h2>
-        
+        <div class="">
+            {% include "blog/home_components/certificate_components/certificate_card.html" with certificates=certificates %}
+        </div>
     </section>
     
     {% comment %} faq {% endcomment %}
