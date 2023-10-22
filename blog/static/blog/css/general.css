@@ -17,12 +17,14 @@
     src: local('YoungSerif'),
          url('../fonts/YoungSerif-Regular.ttf') format("truetype");
 }
-
+html {
+    scroll-padding-top: 65px;
+}
 body {
     background-color: gray;
     font-family: 'TiltNeon';
 }
-h1, h2 {
+h1, h2, h3 {
     font-family: 'YoungSerif';
 }
 
