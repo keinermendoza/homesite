@@ -2,7 +2,7 @@
 
 
 {% for certificate in certificates  %}
-<div class="card mb-3" >
+<div class="card mb-3 overflow-hidden" >
     <div class="row g-0">
       
         <div class="col-md-5">
@@ -11,55 +11,53 @@
             </figure>
         </div>
       
-        <div class="col-md-7">
 
-            <div class="card-body d-flex flex-column justify-content-between text-center text-bg-dark">
-                <div>
-                    <h3 class="card-title">
-                        <img class="icon-verified" src="{% static 'blog/images/verified.svg' %}" alt="icon verified">
-                        <span>{{certificate.title}}</span>
-                    </h3>
-                    <div class="text-center " >
-                        <h4 >Topics</h4>
-                        <ul class="row g-2 row-cols-2 bullet-in">
-        
-                        {% for topic in certificate.topics %}
-                            {% if forloop.counter|divisibleby:2 %}
-                                <li class="col">{{topic}}</li>
+        <div class="col-md-7 card-body d-flex flex-column justify-content-between text-center text-bg-dark">
+            <div>
+                <h3 class="card-title">
+                    <img class="icon-verified" src="{% static 'blog/images/verified.svg' %}" alt="icon verified">
+                    <span>{{certificate.title}}</span>
+                </h3>
+                <div class="text-center " >
+                    <h4 >Topics</h4>
+                    <ul class="row g-2 row-cols-2 bullet-in">
+    
+                    {% for topic in certificate.topics %}
+                        {% if forloop.counter|divisibleby:2 %}
+                            <li class="col">{{topic}}</li>
+                        {% else %}
+    
+                            {% comment %} in case odd the last column fill the row {% endcomment %}
+                            {% if forloop.last %}
+                                <li class="col-12">{{topic}}</li>
                             {% else %}
-        
-                                {% comment %} in case odd the last column fill the row {% endcomment %}
-                                {% if forloop.last %}
-                                    <li class="col-12">{{topic}}</li>
-                                {% else %}
-                                    <li class="col">{{topic}}</li>
-                                {% endif %}
+                                <li class="col">{{topic}}</li>
                             {% endif %}
-                        {% endfor %}
-        
-                        </ul>
-                    </div>
+                        {% endif %}
+                    {% endfor %}
+    
+                    </ul>
                 </div>
-                <div class="text-center mt-5">
-                    
-                    {% comment %} excercises {% endcomment %}
-                    {% if certificate.excercises  %}
-                        <span class="badge text-bg-light">
-                            <img class="small-icon" src="{% static 'blog/images/github.svg' %}" alt="github icon">
-                            <span>{{certificate.excercises}} Excercises</span>
-                        </span>
-                    {% endif %}
-        
-                    {% comment %} projects {% endcomment %}
-                    {% if certificate.project  %}
-                        <span class="badge text-bg-light">
-                            <img class="small-icon" src="{% static 'blog/images/globe-solid.svg' %}" alt="globe icon">
-                            <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
-                        </span>
-                    {% endif %}
-        
-                    <h5 class="text-center mt-2 mb-3">Click for see more...</h5>
-                </div>
+            </div>
+            <div class="text-center mt-5">
+                
+                {% comment %} excercises {% endcomment %}
+                {% if certificate.excercises  %}
+                    <span class="badge text-bg-light">
+                        <img class="small-icon" src="{% static 'blog/images/github.svg' %}" alt="github icon">
+                        <span>{{certificate.excercises}} Excercises</span>
+                    </span>
+                {% endif %}
+    
+                {% comment %} projects {% endcomment %}
+                {% if certificate.project  %}
+                    <span class="badge text-bg-light">
+                        <img class="small-icon" src="{% static 'blog/images/globe-solid.svg' %}" alt="globe icon">
+                        <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                    </span>
+                {% endif %}
+    
+                <h5 class="text-center mt-2 mb-3">Click for see more...</h5>
             </div>
         </div>
     
