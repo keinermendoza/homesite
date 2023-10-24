@@ -17,15 +17,24 @@
     src: local('YoungSerif'),
          url('../fonts/YoungSerif-Regular.ttf') format("truetype");
 }
+@font-face {
+    font-family: 'Lato';
+    src: local('Lato'),
+         url('../fonts/Lato-Regular.ttf') format("truetype");
+}
+
 html {
     scroll-padding-top: 65px;
 }
 body {
     background-color: gray;
-    font-family: 'TiltNeon';
+    font-family: 'Lato';
 }
 h1, h2, h3, h4 {
     font-family: 'YoungSerif';
+}
+h5, h6, li, button, .btn {
+    font-family:  'TiltNeon';
 }
 
 main {

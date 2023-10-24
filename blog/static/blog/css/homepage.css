@@ -12,6 +12,13 @@
 section:not(:first-child) {
     padding-block: 40px;
 }
+
+.about-svg {
+    max-height: 220px;
+}
+.about-svg > img {
+    height: 100%;
+}
 /* limit the height and inherit the border radius */
 
 /* .project-card {

@@ -32,7 +32,10 @@
             </article>
 
         <figure class="col-12 col-md-5">
-            <img class="profile" src="{% static 'blog/images/profile.jpg' %}" alt="profile picture of the programmer keiner mendoza" />
+            <!-- I had an extra col inside for limitate the imag size on small screens -->
+            <div class="col-10 mx-auto col-md-12">
+                <img class="profile" src="{% static 'blog/images/profile.jpg' %}" alt="profile picture of the programmer keiner mendoza" />
+            </div>
         </figure>
     </section>
     
@@ -42,19 +45,33 @@
             <div class="col-11 mx-auto">
 
                 <div class="row col-gap-4">
-                    <p class="col-12 col-md-6">
+                    <!-- at the four elements i add margin block 4 for small screens -->
+                    <p class="mx-auto col-10 col-md-5 my-4 my-md-0">
                         I'm a venezuelan self learning programmer. I actually studied Economy in the University, no fue si no hasta 
                         que termine mis estudios universitarios que conoci el mundo de la programacion y supe que me queria dedicar
                         a la solucion de problemas por medio de la creacion de software. He estado trabajando en mis habilidades 
                         como porgramador desde mayo de 2022 y desde entonces no he parado de aprender y de crear cosas.
                     </p>
-                    <p class="col-12 col-md-6" >
-                        Inicialmente mi acercamiento a la programacion se dio con la automatizacion de pequenas tareas
-                        ha sido en el area de la creacion de sites que he tenido interaccion con clientes.
-                        Actualmente vivo en Brasil, tengo un dominio basico del ingles, intermedio del portugues y el espanol
-                        es mi idioma nativo.
-                    </p>
+                    <figure class="about-svg mx-auto col-10 col-md-4  my-4 my-md-0">
+                        <img class="" src="{% static 'blog/images/mobile_ds.svg' %}" alt="a person designing an mobile User interface">
+                    </figure>
+
+                    <!-- i had an extra div for swap the img and text in small screens -->
+                    <div class="row d-flex flex-wrap-reverse my-md-5">
+
+                        <figure class="about-svg mx-auto col-10 col-md-5 my-4 my-md-0">
+                            <img class="" src="{% static 'blog/images/desktop_ds.svg' %}" alt="a person designing an desktop User interface">
+                        </figure>
+                        <p class="mx-auto col-10 col-md-5  my-4 my-md-0" >
+                            Inicialmente mi acercamiento a la programacion se dio con la automatizacion de pequenas tareas
+                            ha sido en el area de la creacion de sites que he tenido interaccion con clientes.
+                            Actualmente vivo en Brasil, tengo un dominio basico del ingles, intermedio del portugues y el espanol
+                            es mi idioma nativo.
+                        </p>
+                    </div>
+                
                 </div>
+
             </div>
     </section>
 
