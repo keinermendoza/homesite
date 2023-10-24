@@ -2,40 +2,29 @@
 
 
 {% for certificate in certificates  %}
-<div class="card mb-3 overflow-hidden" >
+<div class="card certificate-card mb-3 overflow-hidden mx-auto col-11 col-md-10" >
     <div class="row g-0">
       
-        <div class="col-md-5">
+        <div class="col-md-7 col-lg-6">
             <figure class="certified-img">
                 <img  src="{% static certificate.image %}" alt="{{certificate.title}}">
             </figure>
         </div>
       
 
-        <div class="col-md-7 card-body d-flex flex-column justify-content-between text-center text-bg-dark">
+        <div class="col-md-5 col-lg-5 card-body d-flex flex-column justify-content-between text-center text-bg-dark">
             <div>
-                <h3 class="card-title">
+                <h4 class="card-title">
                     <img class="icon-verified" src="{% static 'blog/images/verified.svg' %}" alt="icon verified">
                     <span>{{certificate.title}}</span>
-                </h3>
+                </h4>
                 <div class="text-center " >
-                    <h4 >Topics</h4>
-                    <ul class="row g-2 row-cols-2 bullet-in">
+                    <h5 class="mb-3">Topics</h5>
+                    <ul class="row g-2 row-cols-2 ">
     
                     {% for topic in certificate.topics %}
-                        {% if forloop.counter|divisibleby:2 %}
-                            <li class="col">{{topic}}</li>
-                        {% else %}
-    
-                            {% comment %} in case odd the last column fill the row {% endcomment %}
-                            {% if forloop.last %}
-                                <li class="col-12">{{topic}}</li>
-                            {% else %}
-                                <li class="col">{{topic}}</li>
-                            {% endif %}
-                        {% endif %}
+                            <li class="col bullet-in">{{topic}}</li>
                     {% endfor %}
-    
                     </ul>
                 </div>
             </div>

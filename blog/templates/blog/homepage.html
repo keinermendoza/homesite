@@ -14,12 +14,21 @@
 {% block main %}
     
     {% comment %} hero {% endcomment %}
-    <section id="home" class="d-flex flex-wrap-reverse align-items-center justify-content-between gap-md-1">
-            <article class="col-12 col-md-6 d-grid gap-1 gap-lg-4">
-                <h1>I'm Keiner Mendoza</h1>
-                <h3>Web Developer</h3>
-                <h4>I make software solutions using web tecnologies as HTML, CSS, JavaScript, Django and React</h4>
-                <h4>I believe in continuous learning, since May 2022 I have been developing my programming skills and I plan to continue improving in this field.</h4>
+    <section id="home" class="d-flex flex-wrap-reverse align-items-center justify-content-between gap-md-1  ">
+            <article class="col-12 col-md-6 d-grid gap-1 gap-lg-4 text-center text-md-start">
+                <h1 class="mb-0">I'm Keiner Mendoza</h1>
+                <h2 class="text-warning">Web Developer</h2>
+                <h4>I make websites using tecnologies as JavaScript, HTML, CSS, Django and More. I'm open to work</h4>
+                <div class="d-flex justify-content-center justify-content-md-start gap-2 text-center">
+                    <div>
+                        <a class="btn btn-primary mb-1">Send me a Message</a>
+                        <p class="">Use the email sistem <br/> of this site</p>
+                    </div>
+                    <div>
+                        <a class="btn btn-primary mb-1">Send me an Email</a>
+                        <p class="mb-0">Use the message sistem <br/> of this site. Requires an account<br/> (it's free)</p>
+                    </div>
+                </div>
             </article>
 
         <figure class="col-12 col-md-5">
@@ -27,10 +36,32 @@
         </figure>
     </section>
     
+    {% comment %} about {% endcomment %}
+    <section id="about" class="text-light">
+        <h2 class="text-center  mb-4">About</h2>
+            <div class="col-11 mx-auto">
+
+                <div class="row col-gap-4">
+                    <p class="col-12 col-md-6">
+                        I'm a venezuelan self learning programmer. I actually studied Economy in the University, no fue si no hasta 
+                        que termine mis estudios universitarios que conoci el mundo de la programacion y supe que me queria dedicar
+                        a la solucion de problemas por medio de la creacion de software. He estado trabajando en mis habilidades 
+                        como porgramador desde mayo de 2022 y desde entonces no he parado de aprender y de crear cosas.
+                    </p>
+                    <p class="col-12 col-md-6" >
+                        Inicialmente mi acercamiento a la programacion se dio con la automatizacion de pequenas tareas
+                        ha sido en el area de la creacion de sites que he tenido interaccion con clientes.
+                        Actualmente vivo en Brasil, tengo un dominio basico del ingles, intermedio del portugues y el espanol
+                        es mi idioma nativo.
+                    </p>
+                </div>
+            </div>
+    </section>
+
     {% comment %} projects {% endcomment %}
     <section id="projects">
         <h2 class="text-center mb-4">Projects</h2>
-        <div class="grid-columns-min-300px">
+        <div class="grid-columns-min-280px">
             {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
         </div>
         <div class="text-center mt-5">
