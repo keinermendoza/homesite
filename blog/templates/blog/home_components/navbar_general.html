@@ -1,0 +1,68 @@
+{% load static %}
+
+<div class="d-grid p-3 px-md-4 text-white sticky-top align-content-center bg-darkblue">
+    <div id="main-navbar" class="d-flex align-items-center justify-content-between">
+
+        {% comment %} logo {% endcomment %}
+        <div id="position">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><span>Keiner Mendoza</span></li>
+                  <li class="breadcrumb-item" aria-current="page">{{current}}</li>
+                </ol>
+            </nav>
+        </div>
+
+        {% comment %} nav links {% endcomment %}
+        <nav class="col-7 d-none d-md-flex align-items-center justify-content-evenly text-center">
+            <li class="nav-item px-3 py-1 rounded-pill
+                {% if current == 'homepage' %}active{% endif %}">
+                
+                <a class="nav-link" href={% url 'home'%}>Home Page</a>
+            </li>
+            <li class="nav-item px-3 py-1 rounded-pill
+                {% if current == 'projects' %}active{% endif %}">
+                
+                <a class="nav-link" href={% url 'project_list'%}>Projects Page</a>
+            </li>
+            <li class="nav-item px-3 py-1 rounded-pill
+                {% if current == 'certificates' %}active{% endif %}">
+                
+                <a class="nav-link" href={% url 'certificate_list'%}>Certificates Page</a>
+            </li>
+            <li class="nav-item px-3 py-1 rounded-pill
+                {% if current == 'blog' %}active{% endif %}">
+                <a class="nav-link" href={% url 'post_list'%}>Blog Page</a>
+            </li>
+        </nav>
+
+        <button id="navbar-btn" class="d-block d-md-none px-2 py-1 rounded-3 up">
+            <img id="bars" class="icon" src="{% static 'blog/images/bars-staggered.svg' %}" />
+            <img style="display:none;" id="x" class="icon" src="{% static 'blog/images/x.svg' %}" />
+        </button>
+        
+    </div>
+    <div class="mobile-menu general-mobile-navbar d-grid"  id="mobile-menu">
+        <div class="d-flex flex-column text-center justify-content-between">
+                <li class="nav-item px-3 py-1 mobile-item
+                    {% if current == 'homepage' %}active{% endif %}">
+                    
+                    <a class="nav-link" href={% url 'home'%}>Home Page</a>
+                </li>
+                <li class="nav-item px-3 py-1 mobile-item
+                    {% if current == 'projects' %}active{% endif %}">
+                    
+                    <a class="nav-link" href={% url 'project_list'%}>Projects Page</a>
+                </li>
+                <li class="nav-item px-3 py-1 mobile-item
+                    {% if current == 'certificates' %}active{% endif %}">
+                    
+                    <a class="nav-link" href={% url 'certificate_list'%}>Certificates Page</a>
+                </li>
+                <li class="nav-item px-3 py-1 mobile-item
+                    {% if current == 'blog' %}active{% endif %}">
+                    <a class="nav-link" href={% url 'post_list'%}>Blog Page</a>
+                </li>
+        </div>
+    </div>
+</div>

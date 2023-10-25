@@ -1,9 +1,10 @@
 {% load static %}
-<header class="p-3 px-md-4 text-white fixed-top d-grid align-content-center bg-darkblue">
+<div class="p-3 px-md-4 text-white  d-grid align-content-center bg-darkblue">
     <div id="navbar" class="d-flex align-items-center justify-content-between">
 
         {% comment %} logo {% endcomment %}
         <div id="brand"><strong>Keiner Mendoza</strong></div>
+        
 
         {% comment %} nav links {% endcomment %}
         <nav class="col-7 d-none d-md-flex align-items-center justify-content-evenly ">
@@ -24,4 +25,4 @@
             {% include "blog/home_components/navbar_components/links.html" with links=links mobile=True %}
         </div>
     </div>
-</header>
+</div>

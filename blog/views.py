@@ -23,6 +23,56 @@ links = [
     },
 ]
 
+posts = [
+    {
+        'id':1,
+        'title': 'saliendo para la casa',
+        'body': '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis vitae blanditiis et eius nulla, ut dolorum. Culpa sapiente maxime laudantium sequi, maiores, ut qui molestiae doloribus, ipsa quibusdam aliquid!
+        Laudantium eaque voluptatum fugit delectus earum optio? Consectetur aspernatur aliquid eos laborum, illo cumque ea illum assumenda quaerat id! Ab amet, nemo veritatis necessitatibus suscipit rerum optio odit ipsum sequi.
+        Ex neque delectus officiis ipsam ab sed sequi quibusdam voluptate, enim accusantium, provident tenetur autem eum dolores excepturi tempora doloremque, illum cumque similique dolorem eligendi. Dolor ullam incidunt dolorum fuga.
+        Libero magni consequuntur laboriosam animi inventore nobis culpa, aliquam qui temporibus. Culpa, temporibus quidem officiis quibusdam obcaecati vitae eius repudiandae quo magni expedita neque vel saepe ex accusantium itaque sequi?
+        Excepturi fugit vitae sunt exercitationem quisquam, labore dignissimos dolores doloribus omnis odio mollitia itaque cumque ipsam nisi adipisci molestias, assumenda facere aut porro quasi sequi. Optio fuga nisi incidunt possimus!
+        Tempora ea sit alias. Odio consectetur blanditiis nobis laudantium rem, totam possimus praesentium maiores dolores quae dolorem corrupti voluptate quia neque debitis enim, nostrum iure architecto fugit officia quod. Beatae
+        At, consequatur. Veniam nemo, quis iusto natus facere voluptates officia aut velit qui ullam in rerum. Sit corrupti corporis voluptatem reiciendis ab temporibus, eum quisquam excepturi facere, ut odio aspernatur.
+        Recusandae a impedit iure quam facere porro voluptatibus aut placeat laborum consectetur, vel, neque quasi error accusamus sed omnis doloribus vero assumenda natus maxime. Tempora perspiciatis ipsum enim neque aspernatur.
+        ia officia maxime aliquam dolores voluptatem eius similique labore eum accusantium iusto quibusdam velit ut ipsam, laboriosam dignissimos exercitationem, molestiae, rem culpa beatae non repudiandae facilis aut cupiditate! Est, odit.
+        Suscipit, rerum. Quam labore magnam architecto! Ab odio doloribus labore dolorum. Porro reiciendis atque error repudiandae! Natus eos enim earum nam doloribus praesentium dolore quidem labore dicta maxime, consequuntur rerum
+         hic repellendus. Temporibus cumque tempora vero fugiat quasi molestiae veniam nostrum ad, accusamus delectus quia qui beatae sequi non, magni iste eaque! Repellat illum velit distinctio
+        Adipisci impedit fugit dignissimos. Veniam repellat nihil dolores maxime natus consectetur assumenda in esse repudiandae architecto corrupti illo quo, animi harum amet, debitis dolorem, blanditiis doloremque eveniet beatae alias voluptatibus.'''
+    },
+    {
+        'id':2,
+        'title': 'este es mi segundo post',
+        'body': '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis vitae blanditiis et eius nulla, ut dolorum. Culpa sapiente maxime laudantium sequi, maiores, ut qui molestiae doloribus, ipsa quibusdam aliquid!
+        Laudantium eaque voluptatum fugit delectus earum optio? Consectetur aspernatur aliquid eos laborum, illo cumque ea illum assumenda quaerat id! Ab amet, nemo veritatis necessitatibus suscipit rerum optio odit ipsum sequi.
+        Ex neque delectus officiis ipsam ab sed sequi quibusdam voluptate, enim accusantium, provident tenetur autem eum dolores excepturi tempora doloremque, illum cumque similique dolorem eligendi. Dolor ullam incidunt dolorum fuga.
+        Libero magni consequuntur laboriosam animi inventore nobis culpa, aliquam qui temporibus. Culpa, temporibus quidem officiis quibusdam obcaecati vitae eius repudiandae quo magni expedita neque vel saepe ex accusantium itaque sequi?
+        Excepturi fugit vitae sunt exercitationem quisquam, labore dignissimos dolores doloribus omnis odio mollitia itaque cumque ipsam nisi adipisci molestias, assumenda facere aut porro quasi sequi. Optio fuga nisi incidunt possimus!
+        Tempora ea sit alias. Odio consectetur blanditiis nobis laudantium rem, totam possimus praesentium maiores dolores quae dolorem corrupti voluptate quia neque debitis enim, nostrum iure architecto fugit officia quod. Beatae
+        At, consequatur. Veniam nemo, quis iusto natus facere voluptates officia aut velit qui ullam in rerum. Sit corrupti corporis voluptatem reiciendis ab temporibus, eum quisquam excepturi facere, ut odio aspernatur.
+        Recusandae a impedit iure quam facere porro voluptatibus aut placeat laborum consectetur, vel, neque quasi error accusamus sed omnis doloribus vero assumenda natus maxime. Tempora perspiciatis ipsum enim neque aspernatur.
+        ia officia maxime aliquam dolores voluptatem eius similique labore eum accusantium iusto quibusdam velit ut ipsam, laboriosam dignissimos exercitationem, molestiae, rem culpa beatae non repudiandae facilis aut cupiditate! Est, odit.
+        Suscipit, rerum. Quam labore magnam architecto! Ab odio doloribus labore dolorum. Porro reiciendis atque error repudiandae! Natus eos enim earum nam doloribus praesentium dolore quidem labore dicta maxime, consequuntur rerum
+         hic repellendus. Temporibus cumque tempora vero fugiat quasi molestiae veniam nostrum ad, accusamus delectus quia qui beatae sequi non, magni iste eaque! Repellat illum velit distinctio
+        Adipisci impedit fugit dignissimos. Veniam repellat nihil dolores maxime natus consectetur assumenda in esse repudiandae architecto corrupti illo quo, animi harum amet, debitis dolorem, blanditiis doloremque eveniet beatae alias voluptatibus.'''
+    },
+    {
+        'id':2,
+        'title': 'a la tercera va la venciada',
+        'body': '''Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis vitae blanditiis et eius nulla, ut dolorum. Culpa sapiente maxime laudantium sequi, maiores, ut qui molestiae doloribus, ipsa quibusdam aliquid!
+        Laudantium eaque voluptatum fugit delectus earum optio? Consectetur aspernatur aliquid eos laborum, illo cumque ea illum assumenda quaerat id! Ab amet, nemo veritatis necessitatibus suscipit rerum optio odit ipsum sequi.
+        Ex neque delectus officiis ipsam ab sed sequi quibusdam voluptate, enim accusantium, provident tenetur autem eum dolores excepturi tempora doloremque, illum cumque similique dolorem eligendi. Dolor ullam incidunt dolorum fuga.
+        Libero magni consequuntur laboriosam animi inventore nobis culpa, aliquam qui temporibus. Culpa, temporibus quidem officiis quibusdam obcaecati vitae eius repudiandae quo magni expedita neque vel saepe ex accusantium itaque sequi?
+        Excepturi fugit vitae sunt exercitationem quisquam, labore dignissimos dolores doloribus omnis odio mollitia itaque cumque ipsam nisi adipisci molestias, assumenda facere aut porro quasi sequi. Optio fuga nisi incidunt possimus!
+        Tempora ea sit alias. Odio consectetur blanditiis nobis laudantium rem, totam possimus praesentium maiores dolores quae dolorem corrupti voluptate quia neque debitis enim, nostrum iure architecto fugit officia quod. Beatae
+        At, consequatur. Veniam nemo, quis iusto natus facere voluptates officia aut velit qui ullam in rerum. Sit corrupti corporis voluptatem reiciendis ab temporibus, eum quisquam excepturi facere, ut odio aspernatur.
+        Recusandae a impedit iure quam facere porro voluptatibus aut placeat laborum consectetur, vel, neque quasi error accusamus sed omnis doloribus vero assumenda natus maxime. Tempora perspiciatis ipsum enim neque aspernatur.
+        ia officia maxime aliquam dolores voluptatem eius similique labore eum accusantium iusto quibusdam velit ut ipsam, laboriosam dignissimos exercitationem, molestiae, rem culpa beatae non repudiandae facilis aut cupiditate! Est, odit.
+        Suscipit, rerum. Quam labore magnam architecto! Ab odio doloribus labore dolorum. Porro reiciendis atque error repudiandae! Natus eos enim earum nam doloribus praesentium dolore quidem labore dicta maxime, consequuntur rerum
+         hic repellendus. Temporibus cumque tempora vero fugiat quasi molestiae veniam nostrum ad, accusamus delectus quia qui beatae sequi non, magni iste eaque! Repellat illum velit distinctio
+        Adipisci impedit fugit dignissimos. Veniam repellat nihil dolores maxime natus consectetur assumenda in esse repudiandae architecto corrupti illo quo, animi harum amet, debitis dolorem, blanditiis doloremque eveniet beatae alias voluptatibus.'''
+    },
+]
 projects = [
     {
         "image": "https://m.media-amazon.com/images/I/71k06Iic2NL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
@@ -50,6 +100,30 @@ projects = [
         "demo": "urldedemo",
         "certified": "urlcertified",
         "online": "urlonline",
+    },
+    {
+        "image": "https://m.media-amazon.com/images/I/61PnHlc0HCL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
+        "name": "Apple iPad",
+        "description": "WHY IPAD — All the essentials in the most affordable iPad, with a beautiful 10.2-inch Retina display, powerful...",
+        "tags": [
+            "tecnology",
+            "pad",
+            "tablet",
+        ],
+        "code": "urldecode",
+        "demo": "urldedemo",
+    },
+    {
+        "image": "https://m.media-amazon.com/images/I/71k06Iic2NL.__AC_SX300_SY300_QL70_FMwebp_.jpg",
+        "name": "RedThunder K84 Wireless",
+        "description": "High-performance 2.4G Wireless Keyboard and Mouse】Are you looking for a small wireless keyboard and mouse...",
+        "tags": [
+            "tecnology",
+            "keyboard",
+            "computers",
+        ],
+        "post": "urlpost",
+        "code": "urldecode",
     },
     {
         "image": "https://m.media-amazon.com/images/I/61PnHlc0HCL.__AC_SY445_SX342_QL70_FMwebp_.jpg",
@@ -144,7 +218,38 @@ def home(request):
         "blog/homepage.html",
         {
             "links": links,
-            "projects": projects,
-            "certificates": certificates,
+            "projects": projects[:4],
+            "certificates": certificates[:2],
+            'current':'homepage'
         },
+    )
+
+def project_list(request):
+    return render(
+        request,
+        'blog/projects/project_list.html',
+        {
+            "projects": projects,
+            'current':'projects'
+        }
+    )
+
+def certificate_list(request):
+    return render(
+        request,
+        'blog/certificates/certificate_list.html',
+        {
+            "certificates": certificates,
+            'current':'certificates'
+        }
+    )
+
+def post_list(request):
+    return render(
+        request,
+        'blog/blog/post_list.html',
+        {
+            "posts": posts,
+            'current':'blog'
+        }
     )

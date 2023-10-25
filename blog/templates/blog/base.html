@@ -33,7 +33,17 @@
 </head>
 
 <body>
-    {% include "blog/home_components/navbar.html" %}    
+    <header class="sticky-top">
+
+    {% if current == 'homepage' %}
+        {% include "blog/home_components/navbar_home.html" %}
+    {% else %}
+        {% include "blog/home_components/navbar_general.html" %}
+    {% endif %}
+
+        
+    </header>
+
     <main class="container-xxl">
         {% block main %}{% endblock main %}
     </main>

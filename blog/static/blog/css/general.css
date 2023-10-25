@@ -33,7 +33,7 @@ body {
 h1, h2, h3, h4 {
     font-family: 'YoungSerif';
 }
-h5, h6, li, button, .btn {
+h5, h6, li, button, .btn, .font-neon {
     font-family:  'TiltNeon';
 }
 
@@ -46,6 +46,17 @@ img {
 }
 .row {
     margin-bottom: 0 !important;
+}
+.breadcrumb {
+    position: relative;
+    top:15px;
+}
+.breadcrumb::after {
+    position: absolute;
+    content:'you are now here';
+    left: 0;
+    bottom: 100%;
+    font-size: 0.8em;
 }
 /* navbar */
 .nav-item {
@@ -71,9 +82,13 @@ img {
     height: 320px;
     opacity: 1;
 }
+.general-mobile-navbar.active {
+    height: 250px;
+}
 .mobile-item {
     padding: 30px;
     margin-block: 5px;
+    color: white;
     border: solid 2px white;
     font-size: 1.5rem;
 }
