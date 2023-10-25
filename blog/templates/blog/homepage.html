@@ -4,6 +4,7 @@
 
 {% block script %}
     <link rel="stylesheet" href="{% static 'blog/css/homepage.css' %}">
+    <script src="{% static 'blog/js/contact_email_form.js' %}"></script>
 {% endblock script %}
 
 {% block title %}
@@ -98,9 +99,45 @@
         </div>
     </section>
     
-    {% comment %} faq {% endcomment %}
-    <section id="faq">
-        
+    {% comment %} contact {% endcomment %}
+    <section id="contact">
+        <h2 class="contact text-center fs-1">Contact</h2>
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h3>This are my social network</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, eligendi?</p>
+            </div>
+
+            <div class="col-12 col-md-6 text-light">
+
+                <!-- for limit reduce a bit more the width form on screens greater than small -->
+                <div class="col-12 col-sm-11 mx-auto">
+                    <h3>
+                        Send me an email
+                    </h3>
+                    <p class="fs-5">This uses the email send system of this website. You will recive an automatic response now and latter I will get in touch.</p>
+                    
+
+                    <div class="email_form_container">
+                        <form id="contact_email_form" action="{% url 'api_email_contact' %}" method="post">
+                                {% csrf_token %}
+                            <labe class="fs-5" for="request_email">Email</label>
+                            <input class="fs-5 form-control mt-2 mb-4" id="request_email" type="email" name="email">
+                            
+                            <label class for="request_body">Your Message</label>
+                            <textarea class="form-control mt-2 mb-4" name="body" id="request_body" cols="30" rows="6"></textarea>
+                            <div class="text-end">
+                                <input class="fs-5 btn btn-primary" type="submit" value="Send">
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+                
+            </div>
+
+            <!-- end of the row -->
+        </div>
     </section>
     
     {% comment %} blog_last     {% endcomment %}
