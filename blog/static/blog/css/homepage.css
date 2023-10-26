@@ -43,9 +43,7 @@ section:not(:first-child) {
     }
 } */
 
-.row>* {
-    padding: 0px !important;
-}
+
 .certified-img {
     height:100%;
 }

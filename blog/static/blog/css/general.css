@@ -39,14 +39,14 @@ h5, h6, li, button, .btn, .font-neon {
 
 main {
     min-height: 100vh;
-    margin-top: 80px;
+    
 }
 img {
     width: 100%;
 }
-.row {
+/* .row {
     margin-bottom: 0 !important;
-}
+} */
 .breadcrumb {
     position: relative;
     top:15px;
