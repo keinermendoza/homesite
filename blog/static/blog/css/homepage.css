@@ -42,6 +42,10 @@ section:not(:first-child) {
         height: 300px;
     }
 } */
+
+.row>* {
+    padding: 0px !important;
+}
 .certified-img {
     height:100%;
 }
@@ -57,6 +61,8 @@ section:not(:first-child) {
     position: relative;
     top:-1px;
 }
+
+/* CERTIFICATES */
 .icon-verified {
     width: 20px;
 }
@@ -90,11 +96,13 @@ li::marker{
 .sticky {
     position: sticky;
 }
+
+/* ABOUT */
 .about p {
     font-size: 1.1em;
 }
 
-
+/* CONTACT */
 .email_form_container {
     padding: 1rem;
     border-radius: 10px;
@@ -105,4 +113,51 @@ li::marker{
 
 .email_form_container .form-control {
     background-color: rgba(240, 248, 255, 0.85);
+}
+@keyframes toast {
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    8% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+      opacity: 1;  
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.toast-message {
+    position: fixed;
+    bottom: 15px;
+    right: 10px;
+    animation-duration: 5s;
+    animation-name: toast;
+}
+
+
+.move-to-right-on-scroll {
+    transition: all 0.8s;
+    transform: translateX(-100%);
+    opacity:0;
+
+}
+.move-to-right-on-scroll.show {
+    opacity:1;
+    transform: translateX(0);
+}
+
+.project-card:nth-child(2) {
+    transition-delay: 200ms;
+}
+.project-card:nth-child(3) {
+    transition-delay: 400ms;
+    
+}
+.project-card:nth-child(4) {
+    transition-delay: 600ms;
+    
 }

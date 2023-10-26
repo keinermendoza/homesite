@@ -3,6 +3,9 @@
 
 
 {% block script %}
+    <script src="{% static 'blog/js/toast.js' %}"></script>
+    <script src="{% static 'blog/js/homepage_animation_on_scroll.js' %}"></script>
+
     <link rel="stylesheet" href="{% static 'blog/css/homepage.css' %}">
     <script src="{% static 'blog/js/contact_email_form.js' %}"></script>
 {% endblock script %}
@@ -44,7 +47,7 @@
     <section id="about" class="text-light about">
         <h2 class="text-center  mb-4">About</h2>
 
-                <div class="row col-gap-4">
+                <div class="row">
                     <!-- at the four elements i add margin block 4 for small screens -->
                     <div class="row d-flex flex-wrap justify-content-center justify-content-md-between ">
 
