@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, HttpResponseNotFound
 links = [
     {
         "label": "Home",
@@ -154,6 +154,7 @@ projects = [
 certificates = [
     {
         "title": "CS50's Introduction to Programming with Python",
+        "slug": "cs50s-introduction-to-programming-with-python",
         "image": "blog/images/certificates/CS50P.png",
         "excercises": 41,
         "project": 1,
@@ -174,6 +175,7 @@ certificates = [
     },
     {
         "title": "CS50: Introduction to Computer Science",
+        "slug": "cs50-introduction-to-computer-science",
         "image": "blog/images/certificates/CS50x.png",
         "src": "https://certificates.cs50.io/5781eb7c-6c45-4cac-86fc-019b31b6065e.png?size=letter",
         "description": "This is CS50x , Harvard University's introduction to the intellectual enterprises of computer science and the art of programming for majors and non-majors alike, with or without prior programming experience. An entry-level course taught by David J. Malan, CS50x teaches students how to think algorithmically and solve problems efficiently. Topics include abstraction, algorithms, data structures, encapsulation, resource management, security, software engineering, and web development. Languages include C, Python, SQL, and JavaScript plus CSS and HTML. Problem sets inspired by real-world domains of biology, cryptography, finance, forensics, and gaming.",
@@ -193,6 +195,7 @@ certificates = [
     },
     {
         "title": "CS50's Web Programming with Python and JavaScript",
+        "slug": "cs50s-web-programming-with-python-and-javascript",
         "image": "blog/images/certificates/CS50W.png",
         "src": "https://certificates.cs50.io/7aff8b93-7fcd-4a15-87c2-66fc25565a26.png?size=letter",
         "description": "Topics include database design, scalability, security, and user experience. Through hands-on projects, you'll learn to write and use APIs, create interactive UIs, and leverage cloud services like GitHub and Heroku. By course's end, you'll emerge with knowledge and experience in principles, languages, and tools that empower you to design and deploy applications on the Internet.",
@@ -243,6 +246,22 @@ def certificate_list(request):
             'current':'certificates'
         }
     )
+
+def certificate_detail(request, slug):
+    # certificate = get_object_or_404(Certificate, slug=slug)
+    certificate = None
+    for cert in certificates:
+        if cert["slug"] == slug:
+            return render(
+                request,
+                'blog/certificates/certificate_detail.html',
+                {
+                    "certificate": cert,
+                    'current':'certificates',
+                    'detail':cert['title'],
+                }
+            )
+    return HttpResponseNotFound("SORRY, THIS PAGE DOSENT EXIST") 
 
 def post_list(request):
     return render(
