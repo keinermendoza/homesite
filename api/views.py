@@ -2,11 +2,15 @@ from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework import status
 from .forms import ContactEmail
+from account.utils import SendMailTo 
 
 def email_contact(request):
     if request.method == 'POST':
         form = ContactEmail(request.POST)
         if form.is_valid():
+            cd = form.cleaned_data
+            print(cd)
+            SendMailTo.anonimo_contact(cd['name'], cd['email'], cd['message'])
             # send email to me with the content and sender
             # send authomatic message to the user
             return JsonResponse({'message':'Email Suceffully Sended, Check out your email inbox'}, status=200)

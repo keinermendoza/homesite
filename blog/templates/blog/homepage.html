@@ -124,11 +124,15 @@
                     <div class="email_form_container">
                         <form id="contact_email_form" action="{% url 'api_email_contact' %}" method="post">
                                 {% csrf_token %}
+
+                            <labe class="fs-5" for="request_name">Name</label>
+                            <input class="fs-5 form-control mt-2 mb-4" id="request_name" type="text" name="name">
+
                             <labe class="fs-5" for="request_email">Email</label>
                             <input class="fs-5 form-control mt-2 mb-4" id="request_email" type="email" name="email">
                             
                             <label class for="request_body">Your Message</label>
-                            <textarea class="form-control mt-2 mb-4" name="body" id="request_body" cols="30" rows="6"></textarea>
+                            <textarea class="form-control mt-2 mb-4" name="message" id="request_body" cols="30" rows="6"></textarea>
                             <div class="text-end">
                                 <input class="fs-5 btn btn-primary" type="submit" value="Send">
                             </div>

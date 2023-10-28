@@ -1,0 +1,132 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'account/mail.css' %}">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        img {border-radius: inherit;
+            width: 100%;
+            height: auto;
+        }
+        .txt-principal {
+            font-size:3.2rem;
+        }
+        .body {
+            min-height: 700px;
+            background-color: rgb(0, 0, 60);
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            max-width: 1100px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        
+        .figure {
+        
+            border-radius: 50%;
+            max-width: min(90%, 250px);
+            margin: 10px auto;
+            height: auto;
+        }
+        
+        .min-250px {
+            min-width: 250px;
+        }
+        .max-500px {
+            max-width: 500px;
+        }
+        .txt-center {
+            text-align: center;
+        }
+        
+        .txt-header > *{
+            margin-block: 25px;
+        }
+        .photo {
+            object-position: center;
+            object-fit: cover;
+        }
+        
+        .tipic-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap:30px;
+        }
+        .white {
+            color:white;
+        }
+        .container {
+            padding-inline: 15px;
+        }
+        .section {
+            padding: 15px 0;
+            color:white;
+        }
+        .section > * {
+            margin-block: 10px;
+            color: white;
+        }
+        .gray-card {
+            display: block;
+            padding: 20px;
+            color: black !important;
+            background-color: rgb(219, 214, 214);
+            border-radius: 10px;
+            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.493);
+        }
+        .important {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+        }
+        .button {
+            padding: 10px 5px;
+            border-radius: 5px;
+            background-color: gold;
+            border: double black 1px;
+            font-size: 2rem;
+            color: black !important;
+        }
+    </style>
+    <title>Thanks for get in contact</title>
+</head>
+<body class="body container txt-center m-center">
+    <section class="section txt-center" >
+        <figure class="figure">
+            <img src="cid:profile.jpg" />
+        </figure>
+        <article class="min-250px max-500px m-center txt-header" style="margin:auto;">
+            <h1 class="txt-principal">Hello {{name}}, and thanks for get in contact</h1>
+            <h2 class="white">I'm Keiner and it will be a place for me to respond to your comments and questions</h2>
+        </article>
+    </section>
+    <section class="section txt-center">
+        <h3>What is this?</h3>
+        <h4 class="max-500px" style="margin:auto;">This is an automatic response to your message:</h4>
+
+        <q class="m-center gray-card max-500px" style="margin:auto;">{{message}}</q>
+
+        <p>has soon as I see your message <span class="important">I'll text you back</span><br>
+        feel free to ask as many question as you want</p>
+
+    </section>
+    <section class="section">
+        <p>If for any reason this the message up wasn't sended by you, you can contact me by the button bellow</p>
+        <button class="button">Contact Me</button>
+    </section>
+</body>
+</html>
