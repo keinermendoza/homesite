@@ -9,9 +9,7 @@
 .profile {
     border-radius: 50%;
 }
-section:not(:first-child) {
-    padding-block: 40px;
-}
+
 
 .about-svg {
     max-height: 220px;

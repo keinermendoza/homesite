@@ -96,7 +96,7 @@
     <section id="certificates">
         <h2 class="text-center mb-4">Certificates</h2>
         <div class="">
-            {% include "blog/home_components/certificate_components/certificate_card.html" with certificates=certificates %}
+            {% include "blog/home_components/certificate_components/certificate_preview.html" with certificates=certificates %}
         </div>
         <div class="text-center mt-5">
             <a class="btn btn-light btn-lg mx-auto" href="{% url 'certificate_list'  %}">See all the certificates</a>

@@ -4,3 +4,16 @@
 .child-max-400px > * {
     max-width: 400px;
 }
+iframe {
+    height:350px
+}
+@media (min-width:620px) {
+    iframe {
+        height:450px
+    }   
+}
+@media (min-width:992px) {
+    iframe {
+        height:600px
+    }   
+}

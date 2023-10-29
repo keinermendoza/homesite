@@ -1,17 +1,17 @@
 {% load static %}
 
 {% for project in projects  %}
-<a class="move-to-right-on-scroll show-on-scroll card project-card nav-link" href='#projects-slash-{{project.name}}-type-slug'>
+<a class="move-to-right-on-scroll show-on-scroll card project-card nav-link" href='http://localhost:8000/projects/{{project.slug}}'>
     <figure class="product-img">
-        <!-- <img  src="{{project.image}}" alt="{{project.name}}"> -->
-        <img  src="{% static 'blog/images/ecommerce.jpg' %}" alt="{{project.name}}">
+        <!-- <img  src="{{project.image}}" alt="{{project.title}}"> -->
+        <img  src="{{project.image.url}}" alt="{{project.title}}">
 
     </figure>
 
     <div class="card-body d-flex flex-column justify-content-between">
         <div>
-            <h4 class="card-title">{{project.name}}</h4>
-            <p class="card-text">{{project.description}}</p>
+            <h4 class="card-title">{{project.title}}</h4>
+            <p class="card-text">{{project.description | truncatewords:22}}</p>
         </div>
         <div class="text-center mt-3 m-sm-0">
             <h6>This Project has</h6>

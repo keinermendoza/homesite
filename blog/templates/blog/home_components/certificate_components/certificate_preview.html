@@ -1,0 +1,73 @@
+{% load static %}
+
+
+<!-- <div class="d-flex flex-wrap justify-content-between"> -->
+<div class="container-fluid">
+    <div class="row">
+    {% for certificate in certificates  %}
+        <div class="col-12 col-sm-6 col-md-10 mx-auto">
+
+            <div class="card overflow-hidden container-fluid mb-3 g-0">
+                <!-- this is like a container inside the card  -->
+                <!-- the classes row and card dosen't work together -->
+                <div class="row">
+
+                    <!-- when the screen is lg change the display inside the card -->
+                    <!-- image -->
+                    <div class="col-12 col-lg-6 pe-0">
+                        <figure class="certified-img">
+                            <img  src="{{certificate.image.url}}" alt="{{certificate.title}}">
+                        </figure>
+                    </div>
+                
+
+                    <div class="col-12 col-lg-6 card-body d-flex flex-column justify-content-between text-center text-bg-dark">
+                        <div>
+                            <h4 class="card-title">
+                                <img class="icon-verified" src="{% static 'blog/images/verified.svg' %}" alt="icon verified">
+                                <span>{{certificate.title}}</span>
+                            </h4>
+
+                            <!-- topics  -->
+                            <div class="d-none d-lg-block text-center" >
+                                <h5 class="mb-3">Topics</h5>
+                                <ul class="row g-2 row-cols-2 ">
+                
+                                {% for topic in certificate.topics.all %}
+                                    <li class="col bullet-in">{{topic}}</li>
+                                {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <!-- excercises -->
+                            {% if certificate.exercises  %}
+                      
+                                <span class="badge text-bg-light">
+                                    <img class="small-icon" src="{% static 'blog/images/github.svg' %}" alt="github icon">
+                                    <span>{{certificate.exercises}} Excercises</span>
+                                </span>
+                               
+                            {% endif %}
+
+                            <!-- projects -->
+                            {% if certificate.project  %}
+                                <span class="badge text-bg-light">
+                                    <img class="small-icon" src="{% static 'blog/images/globe-solid.svg' %}" alt="globe icon">
+                                    <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                                </span>
+                            {% endif %}
+                            {% comment %} <a class="btn btn-primary" href="http://localhost:8000/certificates/#cs50-introduction-to-computer-science"> Click for see more...</a> {% endcomment %}
+                            {% comment %} <h5 class="text-center mt-2 mb-3">Click for see more...</h5> {% endcomment %}
+                        </div>
+                    <!-- end body -->
+                    </div>
+                <!-- end card -->
+                </div>
+            <!-- end card-container a col -->
+            </div>
+        </div>
+    {% endfor %}
+    </div>
+</div>

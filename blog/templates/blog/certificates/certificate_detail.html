@@ -4,63 +4,19 @@
 
 {% block script %}
 <link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/components/certificate_card.css' %}">
+
     <link rel="stylesheet" href="{% static 'blog/css/project.css' %}">
 {% endblock script %}
     
-{% block title %}Certificates{% endblock title %}
+{% block title %}{{certificate.title}}{% endblock title %}
 
 {% block main %}
 <section class="projects container-fluid">
     <h1 class="text-center pt-4 mb-4">{{certificate.title}}</h1>
 
-                <div class="container">
-                    <!-- at the four elements i add margin block 4 for small screens -->
-                    <div class="row row-cols-1 row-cols-sm-2 d-flex flex-wrap justify-content-center justify-content-md-between ">
-
-                        <article class="col col-md-5 my-4 my-md-0">
-                            <h3>{{certificate.title}}</h3>
-                            <p>{{certificate.description | truncatewords:25 }}</p>
-                        </article>
-                        <figure class="col col-md-4  my-4 my-md-0">
-                            <img class="" src="{% static certificate.image %}" alt="{{certificate.title}}">
-                        </figure>
-                        <div class="col">
-                            <h4>Topics</h4>
-                            {% for topic in certificate.topics %}
-                            <li>{{topic}}</li>
-                            
-                            {% endfor %}
-                        </div>
-
-                        <div class="text-center d-grid align-items-center">
-                            <!-- excercises -->
-                            {% if certificate.excercises  %}
-                            <div>
-                                <span class="badge text-bg-light">
-                                    <img class="small-icon" src="{% static 'blog/images/github.svg' %}" alt="github icon">
-                                    <span>{{certificate.excercises}} Excercises</span>
-                                </span>
-                            </div>
-                            {% endif %}
-
-                            <!-- projects -->
-                            {% if certificate.project  %}
-                            <div>
-                                <span class="badge text-bg-light">
-                                    <img class="small-icon" src="{% static 'blog/images/globe-solid.svg' %}" alt="globe icon">
-                                    <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
-                                </span>
-                            <div>
-                            
-                            {% endif %}
+        {% include "blog/home_components/certificate_components/certificate_card.html" with certificate=certificate %}
                 
-                            {% comment %} <a class="btn btn-primary" href="{{certificate.get_absolute_url}}"> Click for see more...</a> {% endcomment %}
-                        </div>
-                       
-                    </div>
-                </div>
-              
-              
     </section>
         
 {% endblock main %}

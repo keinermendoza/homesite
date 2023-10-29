@@ -1,0 +1,56 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+
+{% block script %}
+<link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/css/project.css' %}">
+{% endblock script %}
+    
+{% block title %}Project Page{% endblock title %}
+
+{% block main %}
+<section class="projects container-fluid">
+    <h1 class="text-center pt-4 mb-4">{{project.title}}</h1>
+
+    <article class="row my-3 d-flex flex-wrap-reverse">
+        <div class="col-12 col-sm-6">{{project.description}}</div>
+        
+        <figure class="col-12 col-sm-6">
+            <img  src="{{ project.image.url }}" alt="{{project.title}}">
+            
+        </figure>  
+    </article>
+
+    {% if project.demo %}
+    <div class="col-12">
+        {% autoescape off %}
+            {{project.demo}}
+        {% endautoescape %}
+    </div>
+    {% endif %}
+
+    {% if project.online %}
+    <div>
+        <a href="{{project.online}}" target="_blank">
+            <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
+            You can see this project online here
+        </a>
+    </div>
+    {% endif %}
+
+    {% if project.certificate %}
+    <div>
+        <a href="{{project.certificate.get_absolute_url}}">
+            <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
+            <span><strong>Project related to Certificate</strong>  {{project.certificate.title}}</span>
+             
+        </a>
+    </div>
+    {% endif %}
+
+
+
+</section>
+        
+{% endblock main %}
