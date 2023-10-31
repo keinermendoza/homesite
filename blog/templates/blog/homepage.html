@@ -107,9 +107,40 @@
     <section id="contact">
         <h2 class="contact text-center fs-1">Contact</h2>
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-sm-11 mx-auto col-md-6">
                 <h3>This are my social network</h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima, eligendi?</p>
+
+                <div class="grid-social">
+
+
+                    <a href="https://github.com/keinermendoza/" class="nav-link col-auto" target="_blank">
+                        <figure class="social-icon">
+                            <img src="{% static 'blog/icons/github.svg' %}" alt="github icon">
+                        </figure>
+                    </a>
+
+                    <a href="https://www.youtube.com/channel/UCeZssHQPq4WT8K-_v0SfOPw" class="nav-link col-auto" target="_blank">
+                        <figure class="social-icon">
+                            <img src="{% static 'blog/icons/youtube.svg' %}" alt="youtube icon">
+                        </figure>
+                    </a>
+
+
+
+                    <a href="https://www.linkedin.com/in/keiner-asael-mendoza-andrade-988ab594/" class="nav-link col" target="_blank">
+                        <figure class="social-icon">
+                            <img src="{% static 'blog/icons/linkedin.svg' %}" alt="linkedin icon">
+                        </figure>
+                    </a>
+
+                    <a href="https://twitter.com/Keiner_Mendoza" class="nav-link " target="_blank">
+                        <figure class="social-icon">
+                            <img src="{% static 'blog/icons/square-x-twitter.svg' %}" alt="twitter icon">
+                        </figure>
+                    </a>
+
+
+                </div>
             </div>
 
             <div class="col-12 col-md-6 text-light">
@@ -147,10 +178,9 @@
             <!-- end of the row -->
         </div>
     </section>
-    
-    {% comment %} blog_last     {% endcomment %}
-    <section id="blog_last">
-        
+
+    <section class="gird-social">
+
     </section>
 
 {% endblock main %}
