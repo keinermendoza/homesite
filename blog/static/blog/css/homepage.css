@@ -95,36 +95,44 @@ li::marker{
 
 .social-icon {
     /* width:min(30%, 100px) */
-    width: min(150px, 20%);
+    /* max-width: 100px; */
+    padding: min(15px, 3vw);
+    background-color: rgba(0, 128, 0, 0.534);
+    border-radius: 50%;
 }
 
+.github-icon {
 
+    top: min(60px, 7vw);
+    left: min(60px, 7vw);
+
+    
+}
+.youtube-icon {
+    top: min(25px, 5vw);
+    right: min(25px, 5vw);
+}
+.linkedin-icon {
+    right: min(100px, 11vw);;
+    bottom: min(60px, 4vw);;
+
+}
+.twitter-icon {
+    left: 0;
+    right: 0;
+    margin: auto;
+    bottom:  min(250px, 25vw);
+}
 /* en prueba */
-.grid-social{
-    height: 500px;
-    width: 500px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-        "x x y y ."
-        "x y y y ."
-        ". . . . ."
-        ". . . . ."
-        ". . . . .";
-    }
-    
 
-.x { 
-    grid-area: x; 
-    background-color: red;
+.network-img {
+    border-radius: 30px;
+    height: 100%;
+    object-fit: cover;
 }
-    
-.y {
-    grid-area: y; 
-    background-color: green;
+
+.net-icon {
+    max-width: min(100px, 25%);
 
 }
       
