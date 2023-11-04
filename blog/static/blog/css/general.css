@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 :root {
-    --dark--blue: rgb(1,5,19); 
+    --dark--blue: rgb(1,5,19);
+    --mask--dark--blue: rgba(1, 5, 19, 0.8);
 }
 @font-face {
     font-family: 'TiltNeon';
@@ -108,7 +109,7 @@ img {
 /* for develope */
 
 main {
-    background-color: purple;
+    background-color: var(--dark--blue);
 }
 
 .badge {
@@ -121,4 +122,9 @@ main {
 }
 .icon-me-1 {
     margin-right: 5px;
+}
+
+/* for project section */
+.child-max-400px > * {
+    max-width: 400px;
 }

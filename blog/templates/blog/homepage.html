@@ -19,61 +19,72 @@
 {% block main %}
     
     {% comment %} hero {% endcomment %}
-    <section id="home" class="d-flex flex-wrap-reverse align-items-center justify-content-between gap-md-1  ">
-            <article class="col-12 col-md-6 d-grid gap-1 gap-lg-4 text-center text-md-start">
-                <h1 class="mb-0">I'm Keiner Mendoza</h1>
-                <h2 class="text-warning">Web Developer</h2>
-                <h4>I make websites using tecnologies as JavaScript, HTML, CSS, Django and More. I'm open to work</h4>
-                <div class="d-flex justify-content-center justify-content-md-start gap-2 text-center font-neon">
-                    <div>
-                        <a class="btn btn-primary mb-1">Send me a Message</a>
-                        <p class="">Use the email sistem <br/> of this site</p>
-                    </div>
-                    <div>
-                        <a class="btn btn-primary mb-1">Send me an Email</a>
-                        <p class="mb-0">Use the message sistem <br/> of this site. Requires an account<br/> (it's free)</p>
+    <div id="home" class="container-fluid">    
+    <section  class="d-flex flex-wrap-reverse  justify-content-between gap-md-1  ">
+        <article class="col-12 h-md-100 col-md-6 text-center text-md-start mt-3">
+            
+            <!-- principal text -->
+            <div class='d-grid h-50'  >
+                <div class='h-md-100 align-self-center'>
+                    <h1>I'm Keiner Mendoza</h1>
+                    <h2>Web Developer</h2>
+                </div>
+            </div>
+            
+            <!-- text + call to action -->
+            <div class='d-grid h-50'>
+                <div class='h-md-100 mb-4 align-self-end'>
+                    <h4>I love make websites</h4>
+                    <div class="d-flex justify-content-center justify-content-md-start gap-2 text-center font-neon">
+                        <!-- email feature  -->
+                        <div>
+                            <a class="btn btn-primary mb-1">Send me a Message</a>
+                            {% comment %} <p class="">Use the email sistem <br/> of this site</p> {% endcomment %}
+                        </div>
+                        
+                        <!-- this is for the chat feature  -->
+                        {% comment %} <div>
+                            <a class="btn btn-primary mb-1">Send me an Message</a>
+                            <p class="mb-0">Use the message sistem <br/> of this site. Requires an account<br/> (it's free)</p>
+                        </div>  {% endcomment %}
                     </div>
                 </div>
-            </article>
+            </div>
 
-        <figure class="col-12 col-md-5">
+        </article>
+
+        <figure class="col-12 col-md-4 mt-3">
             <!-- I had an extra col inside for limitate the imag size on small screens -->
             <div class="col-10 mx-auto col-md-12">
                 <img class="profile" src="{% static 'blog/images/profile.jpg' %}" alt="profile picture of the programmer keiner mendoza" />
             </div>
         </figure>
     </section>
-    
+</div>
     {% comment %} about {% endcomment %}
     <section id="about" class="text-light about">
         <h2 class="text-center  mb-4">About</h2>
 
-                <div class="row">
+                <div class="row mx-0">
                     <!-- at the four elements i add margin block 4 for small screens -->
-                    <div class="row d-flex flex-wrap justify-content-center justify-content-md-between ">
+                    <div class="row  mx-0 d-flex flex-wrap justify-content-center justify-content-md-between ">
 
-                        <p class=" col-10 col-md-5 my-4 my-md-0">
-                            I'm a venezuelan self learning programmer. I actually studied Economy in the University, no fue si no hasta 
-                            que termine mis estudios universitarios que conoci el mundo de la programacion y supe que me queria dedicar
-                            a la solucion de problemas por medio de la creacion de software. He estado trabajando en mis habilidades 
-                            como porgramador desde mayo de 2022 y desde entonces no he parado de aprender y de crear cosas.
+                        <p class=" col-12 col-md-5 my-4 my-md-0">
+                            I graduated from the Faculty of Economic Sciences with a Bachelor's degree in Economics. Subjects related to Computer Science always caught my attention, but it was not until 2022 that I really discovered the field of programming and since then I have not stopped delving deeper into the field of web development.
                         </p>
-                        <figure class="about-svg col-10 col-md-4  my-4 my-md-0">
+                        <figure class="about-svg col-12 col-md-4  my-4 my-md-0">
                             <img class="" src="{% static 'blog/images/mobile_ds.svg' %}" alt="a person designing an mobile User interface">
                         </figure>
                     </div>
                         
                     <!-- i had an extra div for swap the img and text in small screens -->
-                    <div class="row d-flex flex-wrap-reverse my-md-5 justify-content-center justify-content-md-between">
+                    <div class="row  mx-0 d-flex flex-wrap-reverse my-md-5 justify-content-center justify-content-md-between">
 
-                        <figure class="about-svg  col-10 col-md-5 my-4 my-md-0">
+                        <figure class="about-svg  col-12 col-md-5 my-4 my-md-0">
                             <img class="" src="{% static 'blog/images/desktop_ds.svg' %}" alt="a person designing an desktop User interface">
                         </figure>
-                        <p class=" col-10 col-md-5  my-4 my-md-0" >
-                            Inicialmente mi acercamiento a la programacion se dio con la automatizacion de pequenas tareas
-                            ha sido en el area de la creacion de sites que he tenido interaccion con clientes.
-                            Actualmente vivo en Brasil, tengo un dominio basico del ingles, intermedio del portugues y el espanol
-                            es mi idioma nativo.
+                        <p class=" col-12 col-md-5  my-4 my-md-0" >
+                            I consider myself a self-taught web developer, I have developed projects in my free time using different technologies, among which the django development framework stands out. I am currently looking for a job as a full-time web developer. I speak Spanish, some Portuguese, and I have a basic understanding of English. I currently live in Brazil.
                         </p>
                     </div>
                 
@@ -82,17 +93,20 @@
     </section>
 
     {% comment %} projects {% endcomment %}
-    <section id="projects">
-        <h2 class="text-center mb-4">Projects</h2>
-        <div class="grid-columns-min-280px">
+    <section id="projects" class="projects container-fluid">
+        <h1 class="text-center text-light pt-4 mb-4">Projects</h1>
+        <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
             {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
-        </div>
+        </article>
         <div class="text-center mt-5">
             <a class="btn btn-light btn-lg mx-auto" href="{% url 'project_list'  %}">See all the projects</a>
         </div>
     </section>
     
-    {% comment %} courses {% endcomment %}
+    <!-- aqui quiero un carrusel -->
+    <!-- eliminar cretificate list, dejar solo certificate detail -->
+
+    {% comment %} certificates {% endcomment %}
     <section id="certificates">
         <h2 class="text-center mb-4">Certificates</h2>
         <div class="">

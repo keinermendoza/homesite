@@ -1,4 +1,12 @@
+:root {
+    --random--mask:rgba(0, 0, 0, 0.38);
+}
 
+@media (max-width:767px) {
+    :root {
+        --random--mask:rgba(0, 0, 0, 0.78);
+    }
+}
 .from-450-to-280 {
     width: clamp(280px, 50%, 450px);
 }
@@ -10,6 +18,16 @@
     border-radius: 50%;
 }
 
+#home {
+    background: linear-gradient(var(--random--mask), var(--random--mask)),  url('../images/architecture.jpg');
+    background-position: right;
+    background-size: cover;
+    color:rgb(0, 225, 255);
+    text-shadow: 2px 2px 20px rgb(0, 0, 0);
+}
+#home p {
+    font-size: 0.9em;
+}
 
 .about-svg {
     max-height: 220px;
@@ -17,6 +35,16 @@
 .about-svg > img {
     height: 100%;
 }
+.about {
+    background: linear-gradient(rgb(6, 6, 104), var(--dark--blue));
+    font-size: large;
+    word-spacing: 4px;
+}
+/* .about  p {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #000;
+} */
 /* limit the height and inherit the border radius */
 
 /* .project-card {
@@ -66,16 +94,12 @@ li::marker{
  }
 
 
+ #projects {
+    background: linear-gradient(var(--mask--dark--blue), var(--mask--dark--blue)),  url('../images/lationamerica-map.png');
+    background-position: center;
+    background-size: cover;
+}
 
-#home {
-    background-color: blueviolet;
-}
-#home p {
-    font-size: 0.9em;
-}
-#projects {
-    background-color: rgb(81, 21, 136);
-}
 
 .grid-columns-min-280px {
     display: grid;
@@ -183,14 +207,10 @@ li::marker{
     transform: translateX(0);
 }
 
-.project-card:nth-child(2) {
+.project-card:nth-child(2), .project-card:nth-child(5) {
     transition-delay: 200ms;
 }
-.project-card:nth-child(3) {
+.project-card:nth-child(3), .project-card:nth-child(6) {
     transition-delay: 400ms;
-    
-}
-.project-card:nth-child(4) {
-    transition-delay: 600ms;
     
 }

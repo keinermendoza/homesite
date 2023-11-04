@@ -43,8 +43,8 @@
 
         
     </header>
-
-    <main class="container-xxl">
+    {% comment %} I anulate the paddings for customize the backgrounds {% endcomment %}
+    <main class="container-xxl px-0">
         {% block main %}{% endblock main %}
     </main>
     {% include "blog/home_components/footer.html" %}
