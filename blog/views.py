@@ -35,7 +35,7 @@ posts = [
 
 def home(request):
 
-    certificates = Certificate.objects.all()[:2]
+    certificates = Certificate.objects.all()
     projects = Project.objects.all()[:6]
 
     return render(

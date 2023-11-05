@@ -6,12 +6,21 @@
   <title>Swiper demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
   <!-- Link Swiper's CSS -->
-  <link rel="stylesheet" href="swipper.css" />
+  <!-- <link rel="stylesheet" href="swipper.css" /> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 
   <!-- Demo styles -->
   <style>
 
-    main {
+:root {
+  /* --swipper--navigation--size:20px; */
+  --swiper-navigation-top-offset:45% !important;
+  --swiper-theme-color: green;
+}
+.swipper-container {
+      max-width: 900px;
+      margin-inline: auto;
         height: 600px;
         position: relative;
     }
@@ -65,11 +74,49 @@
       stroke-dasharray: 125.6;
       transform: rotate(-90deg);
     }
+
+    .swiper-pagination {
+      /* z-index: 10; */
+      transition: 0.2s border;
+      position:absolute;
+      bottom: 30px !important;
+    }
+    .swiper-pagination-bullet {
+
+      height: 20px !important;
+      width: 20px !important;
+    }
+    .swiper-pagination-bullet:hover {
+      border: 1px solid var(--swiper-theme-color);
+    }
+
+    .swiper-button-next, .swiper-button-prev{
+      padding: 30px;
+      transform: scale(0.5, 0.4);
+      transition: 0.5s transform;
+      background-color: var(--swiper-theme-color);
+      color:white;
+      border-radius: 50%;
+    }
+    
+    .swiper-button-next:hover, .swiper-button-prev:hover {
+      transform: scale(1, 0.8);
+    }
+    .swiper-button-next {
+  
+      right: 10px;
+      justify-content: end;
+    }
+    .swiper-button-prev {
+      left:10px;
+      justify-content: start;
+
+    }
   </style>
 </head>
 
 <body>
-    <main>
+    <div class="swipper-container">
         
   <!-- Swiper -->
   <div class="swiper mySwiper">
@@ -94,10 +141,12 @@
       <span></span>
     </div>
   </div>
-</main>
+</div >
 
   <!-- Swiper JS -->
-  <script src="swipper.js"></script>
+  <!-- <script src="swipper.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 
   <!-- Initialize Swiper -->
   <script>

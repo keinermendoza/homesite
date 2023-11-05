@@ -14,21 +14,23 @@
     width: min(100%, 600px);
 }
 
+/* HOME */
+
 .profile {
     border-radius: 50%;
 }
-
-#home {
+.home {
     background: linear-gradient(var(--random--mask), var(--random--mask)),  url('../images/architecture.jpg');
     background-position: right;
     background-size: cover;
-    color:rgb(0, 225, 255);
+    color:var(--action--color);
     text-shadow: 2px 2px 20px rgb(0, 0, 0);
 }
-#home p {
+.home p {
     font-size: 0.9em;
 }
 
+/* ABOUT */
 .about-svg {
     max-height: 220px;
 }
@@ -40,16 +42,11 @@
     font-size: large;
     word-spacing: 4px;
 }
-/* .about  p {
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #000;
-} */
-/* limit the height and inherit the border radius */
+.about p {
+    font-size: 1.1em;
+}
+/* CERTIFICATES */
 
-/* .project-card {
-    height: 530px;
-} */
 .certified-img , .product-img {
     overflow:hidden;
     height: 40%;
@@ -63,12 +60,16 @@
     width: 100%;
     height: 100%;
 }
-/* @media (min-width:768px) {
-    .certificate-card {
-        height: 300px;
-    }
-} */
 
+.swiper-slide img.small-icon {
+    width: 12px !important;
+}
+
+.certificates {
+    background: url('../images/network.jpg');
+    background-position: center;
+    background-size: cover;
+}
 
 .certified-img {
     height:100%;
@@ -76,13 +77,7 @@
 .certified-img > img {
     object-position: center left;
 }
-/* developer */
 
-
-/* CERTIFICATES */
-.icon-verified {
-    width: 20px;
-}
 .bullet-in {
     list-style: url('../icons/circle-check-regular.svg');
     list-style-position:inside;
@@ -93,8 +88,9 @@ li::marker{
     line-height: 0.1;
  }
 
+/* PROJECTS */
 
- #projects {
+.projects {
     background: linear-gradient(var(--mask--dark--blue), var(--mask--dark--blue)),  url('../images/lationamerica-map.png');
     background-position: center;
     background-size: cover;
@@ -110,56 +106,96 @@ li::marker{
     position: sticky;
 }
 
-/* ABOUT */
-.about p {
-    font-size: 1.1em;
+
+.move-to-right-on-scroll {
+    transition: all 0.8s;
+    transform: translateX(-100%);
+    opacity:0;
+
 }
+.move-to-right-on-scroll.show {
+    opacity:1;
+    transform: translateX(0);
+}
+
+.project-card:nth-child(2), .project-card:nth-child(5) {
+    transition-delay: 200ms;
+}
+.project-card:nth-child(3), .project-card:nth-child(6) {
+    transition-delay: 400ms;
+    
+}
+
 
 /* CONTACT */
 
+
+/* CONTACT -NETWORK */
+
+/* this size is for phones */
 .social-icon {
-    /* width:min(30%, 100px) */
-    /* max-width: 100px; */
-    padding: min(15px, 3vw);
-    background-color: rgba(0, 128, 0, 0.534);
+    padding: min(30px, 4vw);
+    width: min(120px, 15vw);
+    background-color: var(--action--color);
     border-radius: 50%;
+    transition: transform 0.2s;
 }
 
+.social-icon:hover {
+    transform:scale(1.2)
+}
+
+/* size */
+.github-icon .social-icon  {
+    padding: 20px;
+    width: min(200px, 18vw);
+}
+
+.linkedin-icon .social-icon {
+    padding: 40px;
+    width: min(150px, 18vw);
+}
+
+.youtube-icon .social-icon {
+    padding: 30px 20px;
+    width: min(150px, 18vw);
+}
+
+.twitter-icon .social-icon {
+    padding: 20px;
+    width: min(80px, 11vw);
+}
+
+
+
+/* position */
 .github-icon {
-
-    top: min(60px, 7vw);
-    left: min(60px, 7vw);
-
-    
+    top: 60px;
+    left: 60px;
 }
 .youtube-icon {
-    top: min(25px, 5vw);
-    right: min(25px, 5vw);
-}
-.linkedin-icon {
-    right: min(100px, 11vw);;
-    bottom: min(60px, 4vw);;
-
-}
-.twitter-icon {
-    left: 0;
+    left: 50px;
     right: 0;
     margin: auto;
-    bottom:  min(250px, 25vw);
-}
-/* en prueba */
-
-.network-img {
-    border-radius: 30px;
-    height: 100%;
-    object-fit: cover;
-}
-
-.net-icon {
-    max-width: min(100px, 25%);
+    bottom:  250px;
 
 }
-      
+.linkedin-icon {
+    top: 25px;
+    right: 45px;
+}
+.twitter-icon {
+    left: 100px;
+    bottom:60px;
+}
+
+
+.net-icon.position-absolute {
+    max-width: 100px;
+}
+  
+
+/* CONTACT - FORM */
 .email_form_container {
     padding: 1rem;
     border-radius: 10px;
@@ -171,6 +207,8 @@ li::marker{
 .email_form_container .form-control {
     background-color: rgba(240, 248, 255, 0.85);
 }
+
+
 @keyframes toast {
     0% {
         opacity: 0;
@@ -196,21 +234,3 @@ li::marker{
 }
 
 
-.move-to-right-on-scroll {
-    transition: all 0.8s;
-    transform: translateX(-100%);
-    opacity:0;
-
-}
-.move-to-right-on-scroll.show {
-    opacity:1;
-    transform: translateX(0);
-}
-
-.project-card:nth-child(2), .project-card:nth-child(5) {
-    transition-delay: 200ms;
-}
-.project-card:nth-child(3), .project-card:nth-child(6) {
-    transition-delay: 400ms;
-    
-}

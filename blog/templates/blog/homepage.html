@@ -3,12 +3,23 @@
 
 
 {% block script %}
+<script src="{% static 'blog/js/swipper.js' %}"></script>
+<script src="{% static 'blog/js/components/certificate_carrousel.js' %}"></script>
+
+<link rel="stylesheet" href="{% static 'blog/css/swipper.css' %}">
+<link rel="stylesheet" href="{% static 'blog/css/components/certificate_carrousel.css' %}">
+
+ 
+    {% comment %} own independent resources {% endcomment %}
     <script src="{% static 'blog/js/toast.js' %}"></script>
     <script src="{% static 'blog/js/homepage_animation_on_scroll.js' %}"></script>
+    <script src="{% static 'blog/js/contact_email_form.js' %}"></script>
 
     <link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}">
     <link rel="stylesheet" href="{% static 'blog/css/homepage.css' %}">
-    <script src="{% static 'blog/js/contact_email_form.js' %}"></script>
+
+
+
 {% endblock script %}
 
 {% block title %}
@@ -19,7 +30,7 @@
 {% block main %}
     
     {% comment %} hero {% endcomment %}
-    <div id="home" class="container-fluid">    
+    <div id="home" class="home container-fluid">    
     <section  class="d-flex flex-wrap-reverse  justify-content-between gap-md-1  ">
         <article class="col-12 h-md-100 col-md-6 text-center text-md-start mt-3">
             
@@ -62,8 +73,8 @@
     </section>
 </div>
     {% comment %} about {% endcomment %}
-    <section id="about" class="text-light about">
-        <h2 class="text-center  mb-4">About</h2>
+    <section id="about" class="about text-light about">
+        <h2 class="text-center fs-1 color-action mb-4">About</h2>
 
                 <div class="row mx-0">
                     <!-- at the four elements i add margin block 4 for small screens -->
@@ -94,38 +105,129 @@
 
     {% comment %} projects {% endcomment %}
     <section id="projects" class="projects container-fluid">
-        <h1 class="text-center text-light pt-4 mb-4">Projects</h1>
-        <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
-            {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
-        </article>
-        <div class="text-center mt-5">
-            <a class="btn btn-light btn-lg mx-auto" href="{% url 'project_list'  %}">See all the projects</a>
+        <div class="container-fluid">
+
+            <h2 class="text-center fs-1 color-action pt-4 mb-4">Projects</h2>
+            <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
+                {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
+            </article>
+            <div class="text-center mt-5">
+                <a class="btn btn-light btn-lg mx-auto" href="{% url 'project_list'  %}">See all the projects</a>
+            </div>
         </div>
     </section>
     
-    <!-- aqui quiero un carrusel -->
-    <!-- eliminar cretificate list, dejar solo certificate detail -->
 
-    {% comment %} certificates {% endcomment %}
-    <section id="certificates">
-        <h2 class="text-center mb-4">Certificates</h2>
-        <div class="">
-            {% include "blog/home_components/certificate_components/certificate_preview.html" with certificates=certificates %}
-        </div>
+{% comment %} certificates {% endcomment %}
+ <section class="certificates" id="certificates">
+
+    <div class="container-fluid">
+        <h2 class="text-center fs-1 mb-4 color-action">Certificates</h2>
+
+        <div class="swipper-container">
+                
+            <!-- Swiper -->
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                        
+                    {% for certificate in certificates  %}
+                    <div class="swiper-slide ">
+                        <a href="{{certificate.get_absolute_url}}" class="nav-link">
+
+                            <div class="row ">
+
+                                <!-- when the screen is lg change the display inside the card -->
+                                <!-- image -->
+                                <div class="col-12 col-lg-6 pe-0">
+                                    <figure class="certified-img ">
+                                        <img class=""  src="{{certificate.image.url}}" alt="{{certificate.title}}">
+                                    </figure>
+                                </div>
+                            
+            
+                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-between text-center text-light bg-darkblue">
+                                    <div class="p-3 pb-0 ">
+                                        <h4 class="">
+                                            <span>{{certificate.title}}</span>
+                                        </h4>
+            
+                                        <!-- topics  -->
+                                        <div class="d-none d-lg-block text-center" >
+                                            <h5 class="pb-3">Topics</h5>
+                                            <ul class="row g-2 row-cols-2 ">
+                            
+                                            {% for topic in certificate.topics.all %}
+                                                <li class="col bullet-in">{{topic}}</li>
+                                            {% endfor %}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="text-center my-3">
+                                        <!-- excercises -->
+                                        {% if certificate.exercises  %}
+                                
+                                            <span class="badge ">
+                                                <img class="d-inline small-icon" src="{% static 'blog/icons/github.svg' %}" alt="github icon">
+                                                <span>{{certificate.exercises}} Excercises</span>
+                                            </span>
+                                        
+                                        {% endif %}
+            
+                                        <!-- projects -->
+                                        {% if certificate.project  %}
+                                            <span class="badge">
+                                                <img class="d-inline small-icon" src="{% static 'blog/icons/globe-solid.svg' %}" alt="globe icon">
+                                                <span >{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                                            </span>
+                                        {% endif %}
+                                        <h5 class="text-center mt-2 mb-3">Click for see more...</h5>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </a>
+                    </div>         
+                    {% endfor %} 
+                
+                </div>
+
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="autoplay-progress">
+                <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="20"></circle>
+                </svg>
+                <span></span>
+                </div>
+            </div>
+        </div >
+            
+        
         <div class="text-center mt-5">
             <a class="btn btn-light btn-lg mx-auto" href="{% url 'certificate_list'  %}">See all the certificates</a>
         </div>
-    </section>
+
+
+    </div>
+
+</section>
+
+
+
     
     {% comment %} contact {% endcomment %}
-    <section id="contact">
-        <h2 class="contact text-center fs-1">Contact</h2>
+    <section class="contact container-fluid" id="contact">
+        <h2 class="section-title color-action mb-4 text-center fs-1">Contact</h2>
         <div class="row">
             <div class="col-12 col-sm-11 mx-auto col-md-6">
-                <h3>This are my social network</h3>
+                <h3 class="text-center color-action">This are my social network</h3>
 
-                <div class="h-100 position-relative">
-                    <img class="network-img" src="{% static 'blog/images/network.jpg' %}" alt="">
+                <!-- for computers -->
+                <div class="h-100 d-none d-md-block position-relative">
 
                     <a href="https://github.com/keinermendoza/" class="nav-link position-absolute net-icon github-icon" target="_blank">
                         <figure class="social-icon">
@@ -139,8 +241,6 @@
                         </figure>
                     </a>
 
-
-
                     <a href="https://www.linkedin.com/in/keiner-asael-mendoza-andrade-988ab594/" class="nav-link position-absolute net-icon linkedin-icon" target="_blank">
                         <figure class="social-icon">
                             <img src="{% static 'blog/icons/linkedin.svg' %}" alt="linkedin icon">
@@ -152,17 +252,53 @@
                             <img src="{% static 'blog/icons/square-x-twitter.svg' %}" alt="twitter icon">
                         </figure>
                     </a>
-
-            
-
                 </div>
+
+                <!--for phones -->
+                <div class="row d-flex align-items-center justify-content-between d-md-none my-4">
+                    <div class="col-auto">
+
+                        <a href="https://github.com/keinermendoza/" class="nav-link net-icon " target="_blank">
+                            <figure class="social-icon">
+                                <img src="{% static 'blog/icons/github.svg' %}" alt="github icon">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+
+                        <a href="https://www.youtube.com/channel/UCeZssHQPq4WT8K-_v0SfOPw" class="nav-link net-icon " target="_blank">
+                            <figure class="social-icon">
+                                <img src="{% static 'blog/icons/youtube.svg' %}" alt="youtube icon">
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="col-auto">
+
+                        <a href="https://www.linkedin.com/in/keiner-asael-mendoza-andrade-988ab594/" class="nav-link net-icon  n" target="_blank">
+                            <figure class="social-icon">
+                                <img src="{% static 'blog/icons/linkedin.svg' %}" alt="linkedin icon">
+                            </figure>
+                        </a>
+
+                    </div>       
+                    <div class="col-auto">
+
+                        <a href="https://twitter.com/Keiner_Mendoza" class="nav-link net-icon  " target="_blank">
+                            <figure class="social-icon">
+                                <img src="{% static 'blog/icons/square-x-twitter.svg' %}" alt="twitter icon">
+                            </figure>
+                        </a>
+                    </div>
+                
+                </div>
+
             </div>
 
             <div class="col-12 col-md-6 text-light">
 
                 <!-- for limit reduce a bit more the width form on screens greater than small -->
                 <div class="col-12 col-sm-11 mx-auto">
-                    <h3>
+                    <h3 class="text-center color-action">
                         Send me an email
                     </h3>
                     <p class="fs-5">This uses the email send system of this website. You will recive an automatic response now and latter I will get in touch.</p>
@@ -197,7 +333,10 @@
     <section class="gird-social">
 
     </section>
+   
+
 
 {% endblock main %}
 
-
+{% block endscript %}
+{% endblock endscript %}

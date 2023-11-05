@@ -4,6 +4,12 @@
 <!-- <div class="d-flex flex-wrap justify-content-between"> -->
 <div class="container-fluid">
     <div class="row">
+
+
+
+
+
+
     {% for certificate in certificates  %}
         <div class="col-12 col-sm-6 col-md-10 mx-auto">
 
@@ -14,13 +20,13 @@
 
                     <!-- when the screen is lg change the display inside the card -->
                     <!-- image -->
-                    <div class="col-12 col-lg-6 pe-0">
+                    <div class="col-12 col-lg-6 pe-0 h-100">
                         <figure class="certified-img">
                             <img  src="{{certificate.image.url}}" alt="{{certificate.title}}">
                         </figure>
                     </div>
                 
-
+                    
                     <div class="col-12 col-lg-6 card-body d-flex flex-column justify-content-between text-center text-bg-dark">
                         <div>
                             <h4 class="card-title">
@@ -55,7 +61,7 @@
                             {% if certificate.project  %}
                                 <span class="badge text-bg-light">
                                     <img class="small-icon" src="{% static 'blog/images/globe-solid.svg' %}" alt="globe icon">
-                                    <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                                    <span class="certificate-project">{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
                                 </span>
                             {% endif %}
                             {% comment %} <a class="btn btn-primary" href="http://localhost:8000/certificates/#cs50-introduction-to-computer-science"> Click for see more...</a> {% endcomment %}

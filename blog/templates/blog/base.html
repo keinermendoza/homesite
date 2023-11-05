@@ -25,6 +25,9 @@
     <script src="{% static 'blog/js/navbar.js' %}" ></script>
 
 
+
+
+
     {% block script %}{% endblock script %}
 
     <title>
@@ -48,5 +51,9 @@
         {% block main %}{% endblock main %}
     </main>
     {% include "blog/home_components/footer.html" %}
+
+
+    {% block endscript %}
+    {% endblock endscript %}
 </body>
 </html>
