@@ -11,43 +11,59 @@
 
 {% block main %}
 <section class="projects container-fluid">
-    <h1 class="text-center pt-4 mb-4">{{project.title}}</h1>
 
-    <article class="row my-3 d-flex flex-wrap-reverse">
-        <div class="col-12 col-sm-6">{{project.description}}</div>
+    {% if project.youtube_id %}
+    <div class="py-4 col-12">
+        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{project.youtube_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+
+    <h1 class="text-center pt-2">{{project.title}}</h1>
+
+    <article class="row my-4 d-flex flex-wrap-reverse justify-content-between">
+        <div class="col-12 col-md-6 fs-5">{{project.description}}</div>
         
-        <figure class="col-12 col-sm-6">
+        <figure class="col-12 col-md-5">
             <img  src="{{ project.image.url }}" alt="{{project.title}}">
-            
         </figure>  
     </article>
 
-    {% if project.demo %}
-    <div class="col-12">
-        {% autoescape off %}
-            {{project.demo}}
-        {% endautoescape %}
-    </div>
-    {% endif %}
+    <article class="fs-5">
+        <p>This project was developed with the next tecnologies:</p>
+        <ul>
+            {% for tec in project.tecnologies.all %}
+            <li>{{tec}}</li>
+            {% endfor %}
+        </ul>
 
-    {% if project.online %}
-    <div>
-        <a href="{{project.online}}" target="_blank">
-            <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
-            You can see this project online here
-        </a>
-    </div>
-    {% endif %}
+        <div class="fs-5">
+            <p>Here you can find some resources related to this project:</p>
 
-    {% if project.certificate %}
-    <div>
-        <a href="{{project.certificate.get_absolute_url}}">
-            <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
-            <span><strong>Project related to Certificate</strong>  {{project.certificate.title}}</span>
-             
-        </a>
-    </div>
-    {% endif %}
+            {% if project.online %}
+            <div class="btn btn-primary rounded-pill">
+                <a class="nav-link" href="{{project.online}}" target="_blank">
+                    <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
+                    You can see this project online here
+                </a>
+            </div>
+            {% endif %}
+
+            {% if project.certificate %}
+            <div class="btn btn-primary rounded-pill">
+                <a class="nav-link" href="{{project.certificate.get_absolute_url}}">
+                    <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
+                    <span><strong>Project related to Certificate</strong>  {{project.certificate.title}}</span>
+                    
+                </a>
+            </div>
+            {% endif %}
+
+        </div>
+    </article>
+    
+
+    
 
 
 
