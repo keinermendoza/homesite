@@ -10,20 +10,35 @@
 {% block title %}Project Page{% endblock title %}
 
 {% block main %}
-<section class="projects container-fluid">
+<section class="projects container-fluid py-4">
 
     {% if project.youtube_id %}
-    <div class="py-4 col-12">
-        <iframe width="100%" height="auto" src="https://www.youtube.com/embed/{{project.youtube_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="ytiframe mb-5">
+        <figure class="ytiframe__iframe">
+            <iframe class="iframe" width="100%" height="auto" src="https://www.youtube.com/embed/{{project.youtube_id}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </figure>
     </div>
     {% endif %}
 
 
-    <h1 class="text-center pt-2">{{project.title}}</h1>
+    <h1 class="text-center">{{project.title}}</h1>
 
     <article class="row my-4 d-flex flex-wrap-reverse justify-content-between">
         <div class="col-12 col-md-6 fs-5">{{project.description}}</div>
         
+
+        
+
+
+
+
+
+
+
+
+
+
+
         <figure class="col-12 col-md-5">
             <img  src="{{ project.image.url }}" alt="{{project.title}}">
         </figure>  

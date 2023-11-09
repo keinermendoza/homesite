@@ -4,16 +4,32 @@
 .child-max-400px > * {
     max-width: 400px;
 }
-iframe {
-    height:350px
+
+
+.ytiframe {
+    aspect-ratio: 16/9;
+    width: 100%;
+    background: black;
+    max-height: 70vh;
+    display: flex;
+    justify-content: center
 }
-@media (min-width:620px) {
-    iframe {
-        height:450px
-    }   
+
+.ytiframe__iframe {
+    height: 100%;
+    aspect-ratio: 16/9;
+    margin: 0;
+    padding: 0;
+    max-height: 70vh
 }
-@media (min-width:992px) {
-    iframe {
-        height:600px
-    }   
+
+
+.ytiframe .klaro.cm-as-context-notice button {
+    padding-left: 3ch;
+    padding-right: 3ch
+}
+
+.iframe {
+    width: 100%;
+    height: 100%
 }

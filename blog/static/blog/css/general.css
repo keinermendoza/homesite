@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 :root {
-    --dark--blue: rgb(1,5,19);
+    --dark--blue: #010513;
     --mask--dark--blue: rgba(1, 5, 19, 0.8);
     --action--color:rgb(0, 225, 255);
     --swiper-theme-color: rgb(0, 225, 255);
@@ -30,7 +30,9 @@ html {
     scroll-padding-top: 65px;
 }
 body {
-    background-color: gray;
+    background-color: #9c9ce6;
+    background-image: radial-gradient(#0d288a 2px, #9c9ce6 2px);
+    background-size: 40px 40px;
     font-family: 'Lato';
 }
 h1, h2, h3, h4 {
@@ -130,6 +132,7 @@ main {
 .icon-me-1 {
     margin-right: 5px;
 }
+
 
 /* for project section */
 .child-max-400px > * {
