@@ -1,5 +1,6 @@
 .footer {
     background-color: gray;
+    color: black !important;
 }
 .icon-footer-heart {
     position: relative;

@@ -17,6 +17,10 @@
 
     {% for certificate in certificates %}
         {% include "blog/home_components/certificate_components/certificate_card.html" with certificate=certificate %}
+        {% if not forloop.last %}
+        
+        <hr class="mt-3 mb-5">
+        {% endif %}
     {% endfor %}
                 
     </section>

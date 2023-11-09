@@ -6,7 +6,28 @@
 
         <article class="col-12 col-lg-5 my-4 my-lg-0">
             <h3>{{certificate.title}}</h3>
-            <p class="m-0">{{certificate.description}}</p>
+            <p class="mb-3">{{certificate.description}}</p>
+
+            <p class="mb-0">This certificate required</p>
+            <!-- excercises -->
+            {% if certificate.excercises  %}
+            <div>
+                <span class="">
+                    <img class="small-icon icon-me-1" src="{% static 'blog/icons/white-verified.svg' %}" alt="github icon">
+                    <span>{{certificate.excercises}} Excercises</span>
+                </span>
+            </div>
+            {% endif %}
+
+            <!-- projects -->
+            {% if certificate.project  %}
+            <div>
+                <span class="">
+                    <img class="small-icon icon-me-1" src="{% static 'blog/icons/white-verified.svg' %}" alt="globe icon">
+                    <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                </span>
+            </div>
+            {% endif %}
         </article>
 
         <figure class="col-12 col-lg-6 col-xxl-5 d-flex justify-align-center  my-4 my-lg-0">
@@ -21,6 +42,7 @@
         </div>
 
         <div class="col-12 col-md-6 col-lg-6 d-flex flex-column justify-content-evenly text-start text-md-center">
+            <h5 class="text-center">External Resources</h5>
             <!-- source -->
             <div>
                 <a class="nav-link" href="{{certificate.src}}" target="_blank">
@@ -40,36 +62,20 @@
                 </span>
                 </a>
             </div> 
-            <!-- excercises -->
-            {% if certificate.excercises  %}
-            <div>
-                <span class="badge text-bg-light">
-                    <img class="small-icon icon-me-1" src="{% static 'blog/images/verified.svg' %}" alt="github icon">
-                    <span>{{certificate.excercises}} Excercises</span>
-                </span>
-            </div>
-            {% endif %}
-
-            <!-- projects -->
-            {% if certificate.project  %}
-            <div>
-                <span class="badge text-bg-light">
-                    <img class="small-icon icon-me-1" src="{% static 'blog/images/verified.svg' %}" alt="globe icon">
-                    <span>{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
-                </span>
-            </div>
-            {% endif %}
+            
 
 
             <!-- availlable_projects -->
             {% if certificate.available_projects  %}
-            <div>
+            <div class="mt-3">
+                <h5 class="text-center">Related Projects on this site</h5>
+
                 {% for project in certificate.available_projects.all %}
-                <a class="nav-link" href="{{project.get_absolute_url}}" >
-                <span class="badge text-bg-light">
-                    <img class="small-icon icon-me-1" src="{% static 'blog/images/verified.svg' %}" alt="globe icon">
-                    <span>{{project.title}}</span>
-                </span>
+                <a class="nav-link my-2" href="{{project.get_absolute_url}}" >
+                    <span class="badge text-bg-light">
+                        <img class="small-icon icon-me-1" src="{% static 'blog/icons/verified.svg' %}" alt="globe icon">
+                        <span>{{project.title}}</span>
+                    </span>
                 </a>
                 {% endfor %}
             </div>

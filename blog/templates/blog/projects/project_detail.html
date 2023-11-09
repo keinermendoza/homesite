@@ -65,10 +65,10 @@
             {% endif %}
 
             {% if project.certificate %}
-            <div class="btn btn-primary rounded-pill">
+            <div class="btn btn-primary bg-darkblue">
                 <a class="nav-link" href="{{project.certificate.get_absolute_url}}">
-                    <img class="small-icon icon-me-1" src="{% static 'blog/icons/link-solid.svg' %}" alt="link icon">
-                    <span><strong>Project related to Certificate</strong>  {{project.certificate.title}}</span>
+                    <img class="icon icon-me-1" src="{% static 'blog/icons/white-verified.svg' %}" alt="link icon">
+                    <span><strong>Project related to Certificate</strong><br>{{project.certificate.title}}</span>
                     
                 </a>
             </div>
