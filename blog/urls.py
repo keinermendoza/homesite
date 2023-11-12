@@ -15,6 +15,6 @@ urlpatterns = [
     path('certificates/', views.certificate_list, name='certificate_list'),
     path('certificates/<slug:slug>', views.certificate_detail, name='certificate_detail'),
 
-    path('blog/', views.post_list, name='post_list'),
+    # path('blog/', views.post_list, name='post_list'),
 
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

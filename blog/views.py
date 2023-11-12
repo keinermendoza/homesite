@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseNotFound
+from django.urls import reverse
 from .models import Certificate, Project
 
 links = [
@@ -25,16 +25,8 @@ links = [
     },
 ]
 
-posts = [
-    {
-        'id':1,
-        'title': 'saliendo para la casa',
-        'body': 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil omnis vitae blanditiis et eius nulla, ut dolorum.',
-    },
-]
 
 def home(request):
-
     certificates = Certificate.objects.all()
     projects = Project.objects.all()[:6]
 
@@ -69,7 +61,7 @@ def project_detail(request, slug):
         'blog/projects/project_detail.html',
         {
             "project": project,
-            'current':'projects',
+            'current':{'title':'projects', 'url':reverse('project_list')},
             'detail':project.title,
         }
     )
@@ -92,18 +84,9 @@ def certificate_detail(request, slug):
         'blog/certificates/certificate_detail.html',
         {
             "certificate": certificate,
-            'current':'certificates',
+            'current':{'title':'certificates', 'url':reverse('certificate_list')},
             'detail':certificate.title,
         }
     )
 
 
-def post_list(request):
-    return render(
-        request,
-        'blog/blog/post_list.html',
-        {
-            "posts": posts,
-            'current':'blog'
-        }
-    )

@@ -1,14 +1,25 @@
 {% load static %}
 
-<div class="d-grid p-3 px-md-4 text-white sticky-top align-content-center bg-darkblue">
+<div class="d-grid p-3 px-md-4 text-white sticky-top align-content-center bg-darkblue border-bottom border-3 border-light">
     <div id="main-navbar" class="d-flex align-items-center justify-content-between">
 
         {% comment %} logo {% endcomment %}
         <div id="position">
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item"><span>Keiner Mendoza</span></li>
-                  <li class="breadcrumb-item" aria-current="page">{{current}}</li>
+                    <li class="breadcrumb-item">
+                        <a class="color-action" href={% url 'home' %}>Keiner Mendoza</a>
+                    </li>
+
+                    <!-- when the user is in an specific project or certificate -->
+                    {% if detail %}
+                    <li class="breadcrumb-item" ><a class="color-action" href="{{current.url}}">{{current.title}}</a></li>
+                    <li class="breadcrumb-item" aria-current="page">{{detail}}</li>
+
+                    {% else %}
+                    <li class="breadcrumb-item" aria-current="page">{{current}}</li>
+                    {% endif %}
+
                 </ol>
             </nav>
         </div>
@@ -30,10 +41,12 @@
                 
                 <a class="nav-link" href={% url 'certificate_list'%}>Certificates Page</a>
             </li>
-            <li class="nav-item px-3 py-1 rounded-pill
+
+            <!-- TODO -->
+            {% comment %} <li class="nav-item px-3 py-1 rounded-pill
                 {% if current == 'blog' %}active{% endif %}">
                 <a class="nav-link" href={% url 'post_list'%}>Blog Page</a>
-            </li>
+            </li> {% endcomment %}
         </nav>
 
         <button id="navbar-btn" class="d-block d-md-none px-2 py-1 rounded-3 up">
@@ -59,10 +72,10 @@
                     
                     <a class="nav-link" href={% url 'certificate_list'%}>Certificates Page</a>
                 </li>
-                <li class="nav-item px-3 py-1 mobile-item
+                {% comment %} <li class="nav-item px-3 py-1 mobile-item
                     {% if current == 'blog' %}active{% endif %}">
                     <a class="nav-link" href={% url 'post_list'%}>Blog Page</a>
-                </li>
+                </li> {% endcomment %}
         </div>
     </div>
 </div>

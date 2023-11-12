@@ -33,7 +33,7 @@
             {% endif %}
 
             {% comment %} demo youtube {% endcomment %}
-            {% if project.demo  %}
+            {% if project.youtube_id  %}
             <span class="badge text-bg-dark">
                 <img class="small-icon" src="{% static 'blog/icons/white-youtube.svg' %}" alt="youtube icon">
                 <span>Demo</span>
@@ -49,12 +49,12 @@
             {% endif %}
 
             {% comment %} post {% endcomment %}
-            {% if project.code  %}
+            {% comment %} {% if project.post  %}
                 <span class="badge text-bg-dark">
                     <img class="small-icon" src="{% static 'blog/icons/white-blog-solid.svg' %}" alt="Blog icon">
                     <span>Post</span>
                 </span>
-            {% endif %}
+            {% endif %} {% endcomment %}
             
             
             <h5 class="text-center mt-4 mb-3">Click for see more...</h5>

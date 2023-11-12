@@ -19,7 +19,7 @@
             height: auto;
         }
         .txt-principal {
-            font-size:3.2rem;
+            font-size:2rem;
         }
         .body {
             min-height: 700px;
@@ -101,6 +101,9 @@
             font-size: 2rem;
             color: black !important;
         }
+        .my-1 {
+            margin-block:10px;
+        }
     </style>
     <title>Thanks for get in contact</title>
 </head>
@@ -110,16 +113,18 @@
             <img src="cid:profile.jpg" />
         </figure>
         <article class="min-250px max-500px m-center txt-header" style="margin:auto;">
-            <h1 class="txt-principal">Hello {{name}}, and thanks for get in contact</h1>
+            <h1 class="txt-principal my-1">Hello {{name}}, and thanks for get in contact</h1>
+            <br>
             <h2 class="white">I'm Keiner and it will be a place for me to respond to your comments and questions</h2>
         </article>
     </section>
     <section class="section txt-center">
         <h3>What is this?</h3>
         <h4 class="max-500px" style="margin:auto;">This is an automatic response to your message:</h4>
+        <br>
 
         <q class="m-center gray-card max-500px" style="margin:auto;">{{message}}</q>
-
+        <br>
         <p>has soon as I see your message <span class="important">I'll text you back</span><br>
         feel free to ask as many question as you want</p>
 

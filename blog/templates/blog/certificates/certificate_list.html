@@ -12,8 +12,8 @@
 {% block title %}Certificates{% endblock title %}
 
 {% block main %}
-<section class="projects container-fluid">
-    <h1 class="text-center pt-4 mb-4">Certificates</h1>
+<section class="projects py-4 container-fluid">
+    <h1 class="text-center pt-3 mb-4 color-action">Certificates</h1>
 
     {% for certificate in certificates %}
         {% include "blog/home_components/certificate_components/certificate_card.html" with certificate=certificate %}
@@ -23,6 +23,6 @@
         {% endif %}
     {% endfor %}
                 
-    </section>
+</section>
         
 {% endblock main %}

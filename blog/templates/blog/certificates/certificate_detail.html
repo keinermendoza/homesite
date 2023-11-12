@@ -12,8 +12,8 @@
 {% block title %}{{certificate.title}}{% endblock title %}
 
 {% block main %}
-<section class="projects container-fluid">
-    <h1 class="text-center pt-4 mb-4">{{certificate.title}}</h1>
+<section class="projects container-fluid py-4">
+    <h1 class="text-center pt-3 mb-4 color-action" >{{certificate.title}}</h1>
 
         {% include "blog/home_components/certificate_components/certificate_card.html" with certificate=certificate %}
                 

@@ -8,7 +8,7 @@
             </p>
   
           <p class="fs-5">
-            This website has the purpose of sharing my projects, as well as my ideas in the area of web development and programming in general.
+            To share my projects, ideas and code.
           </p>
         </div>
   
@@ -17,18 +17,18 @@
 
                 <ul class="col-6">
                     <p>On this site</p>
-                    <li class="my-1"><a href="/">Homepage</a></li>
-                    <li class="my-1"><a href="/videos">Projects</a></li>
-                    <li class="my-1"><a href="/temas">Certificates</a></li>
+                    <li class="my-1"><a href="{% url 'home' %}">Homepage</a></li>
+                    <li class="my-1"><a href="{% url 'project_list' %}">Projects</a></li>
+                    <li class="my-1"><a href="{% url 'certificate_list' %}">Certificates</a></li>
                 </ul>
                 
                 <ul class="col-6 text-end">
                     <p>
                         My Social Networks
                     </p>
-                    <li class="my-1"><a href="https://youtube.com/makigas" target="_blank">YouTube</a></li>
-                    <li class="my-1"><a href="https://foro.makigas.es" target="_blank">Foro</a></li>
-                    <li class="my-1"><a href="https://discord.com/invite/Mq7TBAB" target="_blank">Discord</a></li>
+                    <li class="my-1"><a href="https://www.youtube.com/channel/UCeZssHQPq4WT8K-_v0SfOPw" target="_blank">YouTube</a></li>
+                    <li class="my-1"><a href="https://www.linkedin.com/in/keiner-asael-mendoza-andrade-988ab594/" target="_blank">Linkedin</a></li>
+                    <li class="my-1"><a href="https://github.com/keinermendoza/" target="_blank">Github</a></li>
                 </ul>
 
             </div>
@@ -37,11 +37,11 @@
   
   
       <div class="col-12 text-center text-md-start">
+        <p>Made by Keiner Mendoza with <span>  <img class="icon icon-footer-heart" src="{% static  'blog/icons/heart-solid.svg'%}" alt=""></span></p>
         <p>
           <strong>Copyright © 2023 keinermendoza</strong><br>
         </p>
   
-        <p>Made by Keiner Mendoza with <span>  <img class="icon icon-footer-heart" src="{% static  'blog/icons/heart-solid.svg'%}" alt=""></span></p>
       </div>
 
 

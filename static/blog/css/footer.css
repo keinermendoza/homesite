@@ -1,0 +1,17 @@
+.footer {
+    background-color: gray;
+    color: black !important;
+}
+.icon-footer-heart {
+    position: relative;
+    bottom: 2px;
+    left: 2px;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    color:black;
+}

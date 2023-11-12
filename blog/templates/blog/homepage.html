@@ -11,6 +11,8 @@
 
  
     {% comment %} own independent resources {% endcomment %}
+    <script src="{% static 'blog/js/send_me_a_message.js' %}"></script>
+
     <script src="{% static 'blog/js/toast.js' %}"></script>
     <script src="{% static 'blog/js/homepage_animation_on_scroll.js' %}"></script>
     <script src="{% static 'blog/js/contact_email_form.js' %}"></script>
@@ -49,7 +51,7 @@
                     <div class="d-flex justify-content-center justify-content-md-start gap-2 text-center font-neon">
                         <!-- email feature  -->
                         <div>
-                            <a class="btn btn-primary mb-1">Send me a Message</a>
+                            <button id="send_me_a_message_btn" class="btn btn-primary mb-1">Send me a Message</button>
                             {% comment %} <p class="">Use the email sistem <br/> of this site</p> {% endcomment %}
                         </div>
                         
@@ -122,68 +124,47 @@
  <section class="certificates" id="certificates">
 
     <div class="container-fluid">
-        <h2 class="text-center fs-1 mb-4 color-action">Certificates</h2>
+        <h2 class="text-center fs-1 mb-4 text-light">Certificates</h2>
 
-        <div class="swipper-container">
+        <div class="swipper-container ">
                 
             <!-- Swiper -->
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                        
+                
                     {% for certificate in certificates  %}
                     <div class="swiper-slide ">
-                        <a href="{{certificate.get_absolute_url}}" class="nav-link">
+                        <a href="{{certificate.get_absolute_url}}"  class="nav-link card border-0 ">
 
-                            <div class="row ">
+                            <img class="card-img-top"  src="{{certificate.image.url}}" alt="{{certificate.title}}">
+                        
+                            <div class="card-body text-center text-light bg-darkblue">
 
-                                <!-- when the screen is lg change the display inside the card -->
-                                <!-- image -->
-                                <div class="col-12 col-lg-6 pe-0">
-                                    <figure class="certified-img ">
-                                        <img class=""  src="{{certificate.image.url}}" alt="{{certificate.title}}">
-                                    </figure>
+                                <div class="p-3 pb-0 ">
+                                    <h4 class="">
+                                        <span>{{certificate.title}}</span>
+                                    </h4>
                                 </div>
-                            
-            
-                                <div class="col-12 col-lg-6 d-flex flex-column justify-content-between text-center text-light bg-darkblue">
-                                    <div class="p-3 pb-0 ">
-                                        <h4 class="">
-                                            <span>{{certificate.title}}</span>
-                                        </h4>
-            
-                                        <!-- topics  -->
-                                        <div class="d-none d-lg-block text-center" >
-                                            <h5 class="pb-3">Topics</h5>
-                                            <ul class="row g-2 row-cols-2 ">
-                            
-                                            {% for topic in certificate.topics.all %}
-                                                <li class="col bullet-in">{{topic}}</li>
-                                            {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    
-                                    <div class="text-center my-3">
-                                        <!-- excercises -->
-                                        {% if certificate.exercises  %}
                                 
-                                            <span class="badge ">
-                                                <img class="d-inline small-icon" src="{% static 'blog/icons/github.svg' %}" alt="github icon">
-                                                <span>{{certificate.exercises}} Excercises</span>
-                                            </span>
-                                        
-                                        {% endif %}
-            
-                                        <!-- projects -->
-                                        {% if certificate.project  %}
-                                            <span class="badge">
-                                                <img class="d-inline small-icon" src="{% static 'blog/icons/globe-solid.svg' %}" alt="globe icon">
-                                                <span >{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
-                                            </span>
-                                        {% endif %}
-                                        <h5 class="text-center mt-2 mb-3">Click for see more...</h5>
-                                    </div>
-
+                                <div class="text-center my-3">
+                                    <!-- excercises -->
+                                    {% if certificate.exercises  %}
+                            
+                                        <span class="badge ">
+                                            <img class="d-inline small-icon" src="{% static 'blog/icons/github.svg' %}" alt="github icon">
+                                            <span>{{certificate.exercises}} Excercises</span>
+                                        </span>
+                                    
+                                    {% endif %}
+        
+                                    <!-- projects -->
+                                    {% if certificate.project  %}
+                                        <span class="badge">
+                                            <img class="d-inline small-icon" src="{% static 'blog/icons/globe-solid.svg' %}" alt="globe icon">
+                                            <span >{{certificate.project}} Project{{ certificate.project | pluralize }}</span>
+                                        </span>
+                                    {% endif %}
+                                    <h5 class="text-center mt-2 mb-3">Click for see more...</h5>
                                 </div>
 
                             </div>
