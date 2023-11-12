@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
       direction: 'horizontal',
       loop: true,
       autoplay: {
-          delay: 9999999999,
+          delay: 6000,
           disableOnInteraction: false,
       },
 
