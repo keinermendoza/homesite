@@ -46,7 +46,7 @@ def project_list(request):
 
     return render(
         request,
-        'blog/projects/project_list.html',
+        'blog/project_list.html',
         {
             "projects": projects,
             'current':'projects'
@@ -58,7 +58,7 @@ def project_detail(request, slug):
    
     return render(
         request,
-        'blog/projects/project_detail.html',
+        'blog/project_detail.html',
         {
             "project": project,
             'current':{'title':'projects', 'url':reverse('project_list')},
@@ -70,7 +70,7 @@ def certificate_list(request):
     certificates = Certificate.objects.all()
     return render(
         request,
-        'blog/certificates/certificate_list.html',
+        'blog/certificate_list.html',
         {
             "certificates": certificates,
             'current':'certificates'
@@ -81,7 +81,7 @@ def certificate_detail(request, slug):
     certificate = get_object_or_404(Certificate, slug=slug)
     return render(
         request,
-        'blog/certificates/certificate_detail.html',
+        'blog/certificate_detail.html',
         {
             "certificate": certificate,
             'current':{'title':'certificates', 'url':reverse('certificate_list')},

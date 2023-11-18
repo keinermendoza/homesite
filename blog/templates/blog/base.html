@@ -10,8 +10,22 @@
     property="og:image"
     content="{% static 'blog/images/profile.jpg' %} %}" />
 
-    <meta property="og:title" content="Blog de Keiner Mendoza" />
-    <meta name="twitter:title" content="Blog de Keiner Mendoza" />
+    <meta property="og:title" content="Keiner Mendoza Web Developer" />
+    <meta name="twitter:title" content="Keiner Mendoza is a Web Developer who likes to solve problems and create websites. with knowledge of HTML, CSS, JavaScript, also Python, Django Framework and related technologies." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% url 'home' %}">
+    <meta property="og:title" content="Keiner Mendoza. Web Developer">
+    <meta property="og:description" content="Keiner Mendoza is a Web Developer who likes to solve problems and create websites. with knowledge of HTML, CSS, JavaScript, also Python, Django Framework and related technologies.">
+    <meta property="og:image" content="{% static 'blog/images/profile.jpg' %}">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{% url 'home' %}">
+    <meta property="twitter:title" content="Keiner Mendoza. Web Developer.">
+    <meta property="twitter:description" content="Keiner Mendoza is a Web Developer who likes to solve problems and create websites. with knowledge of HTML, CSS, JavaScript, also Python, Django Framework and related technologies.">
+    <meta property="twitter:image" content="{% static 'blog/images/profile.jpg' %}">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -39,14 +53,12 @@
 
 <body>
     <header class="sticky-top">
+        {% if current == 'homepage' %}
+            {% include "blog/components/navbar_home.html" %}
+        {% else %}
+            {% include "blog/components/navbar_general.html" %}
+        {% endif %}
 
-    {% if current == 'homepage' %}
-        {% include "blog/home_components/navbar_home.html" %}
-    {% else %}
-        {% include "blog/home_components/navbar_general.html" %}
-    {% endif %}
-
-        
     </header>
 
     {% comment %} I anulate the paddings for customize the backgrounds {% endcomment %}
@@ -54,7 +66,7 @@
         {% block main %}{% endblock main %}
     </main>
     
-    {% include "blog/home_components/footer.html" %}
+    {% include "blog/components/footer.html" %}
 
 
     {% block endscript %}

@@ -14,7 +14,7 @@ class Certificate(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to="media/certificates")
+    image = models.ImageField(upload_to="certificates")
     exercises = models.IntegerField()
     project = models.IntegerField()
     src = models.URLField(blank=True, null=True)
@@ -49,7 +49,7 @@ class Project(models.Model):
     title = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to="media/projects")
+    image = models.ImageField(upload_to="projects")
     mobile_image = models.ImageField(upload_to="projects", blank=True, null=True)
 
     youtube_id = models.CharField(max_length=100, blank=True, null=True)

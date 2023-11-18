@@ -8,7 +8,7 @@
 
         {% comment %} nav links {% endcomment %}
         <nav class="col-7 d-none d-md-flex align-items-center justify-content-evenly ">
-            {% include "blog/home_components/navbar_components/links.html" with links=links %}
+            {% include "blog/components/navbar_components/links.html" with links=links %}
         </nav>
 
         <button id="navbar-btn" class="d-block d-md-none px-2 py-1 rounded-3 up">
@@ -22,7 +22,7 @@
     {% comment %} mobile link {% endcomment %}
     <div class="mobile-menu d-grid"  id="mobile-menu">
         <div class="d-flex flex-column text-center justify-content-between">
-            {% include "blog/home_components/navbar_components/links.html" with links=links mobile=True %}
+            {% include "blog/components/navbar_components/links.html" with links=links mobile=True %}
         </div>
     </div>
 </div>

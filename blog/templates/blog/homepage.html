@@ -101,10 +101,10 @@
                             <img class="" src="{% static 'blog/images/desktop_ds.svg' %}" alt="a person designing an desktop User interface">
                         </figure>
                         <p class=" col-12 col-md-5  my-4 my-md-0" >
-                            My favorite stack is Django, Bootsrap and Vanila Javascript, this site uses that stack, but I have also 
-                            made projects using Django Rest Framework and React, even with just HTML, CSS and JavaScript. As for Deploys,
-                             I have used VMs including the configuration of NGINX, Gunicorn, DNS and SSL, also some platforms such
-                            as Vercel or PythonAnywhere.
+                            I like to use Django, Vanila Javascript and a CSS framework like Bootstrap or more recently Tailwind CSS, this site is built with Django. 
+                            but for other projects I have also used the combination of Django Rest Framework and React or even no framework but only HTML,
+                             CSS and JavaScript. I like to keep learning constantly. 
+                            I'm from Venezuela but I currently live in Brazil, so I speak Spanish, some Portuguese and I'm learning English.
                         </p>
                     </div>
                 
@@ -118,7 +118,7 @@
 
             <h2 class="text-center fs-1 color-action pt-4 mb-4">Projects</h2>
             <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
-                {% include "blog/home_components/project_components/project_card.html" with projects=projects %}
+                {% include "blog/components/projects/project_card.html" with projects=projects %}
             </article>
             <div class="text-center mt-5">
                 <a class="btn btn-light btn-lg mx-auto" href="{% url 'project_list'  %}">See all the projects</a>
