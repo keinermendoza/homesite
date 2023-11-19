@@ -4,7 +4,7 @@
 <a class="move-to-right-on-scroll show-on-scroll card project-card nav-link" href='{{project.get_absolute_url}}'>
     <figure class="product-img">
         <!-- <img  src="{{project.image}}" alt="{{project.title}}"> -->
-        <img  src="{{project.image.url}}" alt="{{project.title}}">
+        <img  src="{% static project.image.url %}" alt="{{project.title}}">
 
     </figure>
 
