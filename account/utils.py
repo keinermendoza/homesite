@@ -15,7 +15,7 @@ class SendMailTo:
     """Class for handle the send of email based on html
     to users authenticated or to a valid email direction"""
 
-    SITE = 'http://localhost:8000/admin/'
+    SITE = 'https://keinermendoza.com/'
     FROM_EMAIL = 'From keiner@example.com'
     WEBSITE_NAME = "Keiner's blog"
 
@@ -26,40 +26,40 @@ class SendMailTo:
         self.plain_message = None
 
     @classmethod
-    def anonimo_contact(cls, name, email, message):
+    def anonimo_contact(cls, username, email, message):
         """sends a contact message to an email direction
             dosen't require a user instance"""
         
         subject = "Thanks for get in contact"
         context = {
-            'name':name,
+            'username':username,
             'message': message
         }
-        body_html = render_to_string('account/mail/contact.html', context)
+        html_message = render_to_string('account/mail/contact.html', context)
 
-        message = EmailMultiAlternatives(
-            subject,
-            body_html,
-            from_email=cls.FROM_EMAIL,
-            to=[email]
-        )
+        ### this options attach a file to an email, it could be usefully for other case
+        # message = EmailMultiAlternatives(
+        #     subject,
+        #     body_html,
+        #     from_email=cls.FROM_EMAIL,
+        #     to=[email]
+        # )
 
-        message.mixed_subtype = 'related'
-        message.attach_alternative(body_html, "text/html")
-        img_dir = 'static'
-        image = 'profile.jpg'
-        # file_path = os.path.join(img_dir, image)
-        file_path = 'blog/static/blog/images/profile.jpg'
+        # message.mixed_subtype = 'related'
+        # message.attach_alternative(body_html, "text/html")
+        # img_dir = 'static'
+        # image = 'profile.jpg'
+        # # file_path = os.path.join(img_dir, image)
+        # file_path = 'blog/static/blog/images/profile.jpg'
 
-        with open(file_path, 'rb') as f:
-            img = MIMEImage(f.read())
-            img.add_header('Content-ID', '<{name}>'.format(name=image))
-            img.add_header('Content-Disposition', 'inline', filename=image)
-        message.attach(img)
+        # with open(file_path, 'rb') as f:
+        #     img = MIMEImage(f.read())
+        #     img.add_header('Content-ID', '<{name}>'.format(name=image))
+        #     img.add_header('Content-Disposition', 'inline', filename=image)
+        # message.attach(img)
 
-
-        # message = EmailMessage(subject, html_message, cls.FROM_EMAIL, [email])
-        # message.content_subtype = 'html' # this is required because there is no plain text email message
+        message = EmailMessage(subject, html_message, cls.FROM_EMAIL, [email])
+        message.content_subtype = 'html' # this is required because there is no plain text email message
         message.send()
 
 

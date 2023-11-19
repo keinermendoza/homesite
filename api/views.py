@@ -10,7 +10,11 @@ def email_contact(request):
         if form.is_valid():
             cd = form.cleaned_data
             print(cd)
-            SendMailTo.anonimo_contact(cd['name'], cd['email'], cd['message'])
+            try:
+                SendMailTo.anonimo_contact(cd['name'], cd['email'], cd['message'])
+            except:
+                return JsonResponse({'error':'Sorry, email service is not available at the moment.'}, status=400)
+
             # send email to me with the content and sender
             # send authomatic message to the user
             return JsonResponse({'message':'Email Suceffully Sended, Check out your email inbox'}, status=200)

@@ -11,10 +11,13 @@
 
 {% block main %}
 <section class="projects container-fluid py-4">
-    <h1 class="text-center pt-3 mb-4 color-action">Projects</h1>
-    <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
-        {% include "blog/components/projects/project_card.html" with projects=projects %}
-    </article>
+    <div class="container">
+
+        <h1 class="text-center pt-3 mb-4 color-action">Projects</h1>
+        <article class="row gap-4 row-cols-1 row-cols-sm-2 row-cols-lg-3 d-flex justify-content-evenly child-max-400px">
+            {% include "blog/components/projects/project_card.html" with projects=projects %}
+        </article>
+    </div>
 </section>
         
 {% endblock main %}

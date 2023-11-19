@@ -109,6 +109,7 @@ li::marker{
 }
 
 
+/* PROJECT CARDS ANIMATION */
 .move-to-right-on-scroll {
     transition: all 0.8s;
     transform: translateX(-100%);
@@ -128,6 +129,13 @@ li::marker{
     
 }
 
+@media (max-width: 865px) {
+    .move-to-right-on-scroll {
+        opacity: 1;
+        transition: none;
+        transform: none;
+    }
+}
 
 /* CONTACT */
 
@@ -167,7 +175,6 @@ li::marker{
     padding: 20px;
     width: min(80px, 11vw);
 }
-
 
 
 /* position */
@@ -236,3 +243,28 @@ li::marker{
 }
 
 
+
+/* styles to apply if a user's device settings are set to reduced motion */
+@media (prefers-reduced-motion) {
+    html {
+        scroll-behavior: auto;
+    }
+    @keyframes grow {
+        0% {
+            background-color: rgb(29, 109, 109);
+            scale: .9;
+        }
+        100% {
+            scale: 1;
+            background-color: rgb(29, 109, 109);
+        }
+    }
+    .move-to-right-on-scroll {
+        opacity: 1;
+        transition: none;
+        transform: none;
+    }
+    .social-icon {
+        transition: none;
+    }
+}
