@@ -20,21 +20,39 @@
     {% comment %} <link rel="stylesheet" href="{% static 'blog/css/components/project_card.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'blog/css/homepage.css' %}">
 
-
-
+    
 {% endblock script %}
 
-{% block title %}
-    Home Page
-{% endblock title %}
+{% block title %}Keiner Mendoza - Web Developer - Homesite{% endblock title %}
  
 
 {% block main %}
     
     {% comment %} hero {% endcomment %}
-    <div id="home" class="home container-fluid">    
-    <section  class="d-flex flex-wrap-reverse  justify-content-between gap-md-1  ">
-        <article class="col-12 h-md-100 col-md-6 text-center text-md-start mt-3">
+    <div id="home" class="container-img__background container-fluid">
+        <!-- background image-->
+           
+        <picture class="bakgorund-image-responsive child-shadow-40" >
+            <source srcset="{% static 'blog/images/hero-mobile.webp' %}" 
+                    media="(max-width: 767px)" />
+
+            <source srcset="{% static 'blog/images/hero-tablet.webp' %}" 
+                    media="(max-width: 1200px)" />
+
+            <source srcset="{% static 'blog/images/hero.webp' %}" 
+                    media="(min-width: 1201px)" />
+            <img
+                src="{% static 'blog/images/hero.webp' %}"
+                alt="Descripción de la imagen"
+                loading="lazy"
+                class="z-1"
+            >
+        </picture>
+
+
+   
+    <section  class="d-flex flex-wrap-reverse  justify-content-between gap-md-1 color-action">
+        <article class="col-12 h-md-100 col-md-6 text-center text-md-start mt-3 z-2">
             
             <!-- principal text -->
             <div class='d-grid h-50'  >
@@ -66,7 +84,7 @@
 
         </article>
 
-        <figure class="col-12 col-md-4 mt-3">
+        <figure class="col-12 col-md-4 mt-3 z-2">
             <!-- I had an extra col inside for limitate the imag size on small screens -->
             <div class="col-10 mx-auto col-md-12">
                 <img class="profile" src="{% static 'blog/images/profile.webp' %}" alt="profile picture of the programmer keiner mendoza" />
@@ -128,7 +146,22 @@
     
 
 {% comment %} certificates {% endcomment %}
- <section class="certificates" id="certificates">
+ <section class="certificates container-img__background" id="certificates">
+
+    <picture class="bakgorund-image-responsive" >
+        <source srcset="{% static 'blog/images/mobile-library.webp' %}" 
+                media="(max-width: 767px)" />
+
+        <source srcset="{% static 'blog/images/tablet-library.webp' %}" 
+                media="(max-width: 1200px)" />
+
+        <img
+            src="{% static 'blog/images/library.webp' %}"
+            alt="Descripción de la imagen"
+            loading="lazy"
+            class="z-1"
+        >
+    </picture>
 
     <div class="container-fluid">
         <h2 class="text-center fs-1 mb-4 text-light">Certificates</h2>

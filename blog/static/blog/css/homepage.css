@@ -19,13 +19,41 @@
 .profile {
     border-radius: 50%;
 }
-.home {
+
+.child-shadow-40 > * {
+    filter: brightness(40%);
+}
+.container-img__background {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  
+  .bakgorund-image-responsive {
+    object-fit: cover;
+    inset:0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .bakgorund-image-responsive > * {
+    object-fit: cover;
+    inset:0;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+/* .home {
     background: linear-gradient(var(--random--mask), var(--random--mask)),  url('../images/hero.webp');
     background-position: center;
     background-size: cover;
     color:var(--action--color);
     text-shadow: 2px 2px 20px rgb(0, 0, 0);
-}
+} */
 .home p {
     font-size: 0.9em;
 }
@@ -67,11 +95,11 @@ small
     width: 12px !important;
 }
 
-.certificates {
+/* .certificates {
     background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/library.webp');
     background-position: center;
     background-size: cover;
-}
+} */
 
 .certified-img {
     height:100%;
