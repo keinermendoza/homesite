@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const seccionDestino = document.getElementById('contact');
         let posicion = seccionDestino.offsetTop;
     
+        document.documentElement.scrollTop = posicion;
         document.body.scrollTop = posicion;
         document.getElementById('request_name').focus();
     }

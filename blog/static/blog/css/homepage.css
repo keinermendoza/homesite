@@ -20,7 +20,7 @@
     border-radius: 50%;
 }
 .home {
-    background: linear-gradient(var(--random--mask), var(--random--mask)),  url('../images/complete.jpg');
+    background: linear-gradient(var(--random--mask), var(--random--mask)),  url('../images/hero.webp');
     background-position: center;
     background-size: cover;
     color:var(--action--color);
@@ -68,7 +68,7 @@ small
 }
 
 .certificates {
-    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/library.jpg');
+    background: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('../images/library.webp');
     background-position: center;
     background-size: cover;
 }
@@ -93,7 +93,7 @@ li::marker{
 /* PROJECTS */
 
 .projects {
-    background: linear-gradient(var(--mask--dark--blue), var(--mask--dark--blue)),  url('../images/lationamerica-map.png');
+    background: linear-gradient(var(--mask--dark--blue), var(--mask--dark--blue)),  url('../images/lationamerica-map.webp');
     background-position: center;
     background-size: cover;
 }
@@ -208,7 +208,7 @@ li::marker{
 .email_form_container {
     padding: 1rem;
     border-radius: 10px;
-    background: linear-gradient(rgba(50, 50, 50, 0.473), rgba(50, 50, 50, 0.473)), url(../images/ecommerce.jpg);
+    background: linear-gradient(rgba(50, 50, 50, 0.473), rgba(50, 50, 50, 0.473)), url(../images/ecommerce.webp);
     background-position: center;
     background-size: cover;
 }
